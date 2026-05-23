@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TV Padaria</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    text-align:center;
+    font-family:Arial;
+}
+
+img{
+    width:100%;
+    height:80vh;
+    object-fit:cover;
+}
+</style>
+</head>
+
+<body>
+
+<h1>PROMOÇÕES DA PADARIA</h1>
+
+<img id="slide" src="foto1.jpg">
+
+<script>
+
+const imagens=[
+"foto1.jpg",
+"foto2.jpg",
+"foto3.jpg"
+];
+
+let pos=0;
+
+setInterval(()=>{
+    pos=(pos+1)%imagens.length;
+    document.getElementById("slide").src=imagens[pos];
+},5000);
+
+</script>
+
+</body>
+</html>
