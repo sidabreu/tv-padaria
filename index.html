@@ -20,9 +20,27 @@ body{
 
 .topo{
     background:#8B4513;
-    padding:20px;
-    text-align:center;
+    padding:15px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+    .empresa{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.empresa span{
     font-size:32px;
+    font-weight:bold;
+}
+
+#relogio{
+    font-size:38px;
+    font-weight:bold;
+    color:#FFD700;
 }
 
 .slide img{
@@ -52,8 +70,14 @@ body{
 <body>
 
 <div class="topo">
-    <img src="img/Logo1.jpg" class="logo">
-    PADARIA SANT'ANA
+
+    <div class="empresa">
+        <img src="img/Logo1.jpg" class="logo">
+        <span>PADARIA SANT'ANA</span>
+    </div>
+
+    <div id="relogio"></div>
+
 </div>
 
 <div class="slide">
@@ -115,6 +139,26 @@ document.getElementById("descricao").innerText=
 slides[atual].descricao;
 
 },5000);
+    function atualizarRelogio(){
+
+    const agora = new Date();
+
+    const hora = agora.toLocaleTimeString(
+        'pt-BR',
+        {
+            hour:'2-digit',
+            minute:'2-digit',
+            second:'2-digit'
+        }
+    );
+
+    document.getElementById("relogio")
+        .innerHTML = hora;
+}
+
+setInterval(atualizarRelogio,1000);
+
+atualizarRelogio();
 
 </script>
 
