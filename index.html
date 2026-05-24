@@ -1,45 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>TV Padaria</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Padaria Pingo D'Água</title>
 
 <style>
+
 body{
     margin:0;
-    background:black;
+    background:#222;
     color:white;
-    text-align:center;
-    font-family:Arial;
+    font-family:Arial,sans-serif;
 }
 
-img{
+.topo{
+    background:#8B4513;
+    padding:20px;
+    text-align:center;
+    font-size:32px;
+}
+
+.slide img{
     width:100%;
-    height:80vh;
+    height:75vh;
     object-fit:cover;
 }
+
+.texto{
+    text-align:center;
+    padding:20px;
+}
+
+.texto h2{
+    font-size:40px;
+    margin:0;
+}
+
+.texto p{
+    font-size:28px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>PROMOÇÕES DA PADARIA</h1>
+<div class="topo">
+    PADARIA PINGO D'ÁGUA
+</div>
 
-<img id="slide" src="foto1.jpg">
+<div class="slide">
+
+<img id="imagem"
+src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600">
+
+<div class="texto">
+
+<h2 id="titulo">
+Pão Francês
+</h2>
+
+<p id="descricao">
+Sempre quentinho
+</p>
+
+</div>
+
+</div>
 
 <script>
 
-const imagens=[
-"Logo1.png",
-"foto2.jpg",
-"foto3.jpg"
+const slides = [
+
+{
+titulo:"Pão Francês",
+descricao:"Sempre quentinho",
+imagem:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600"
+},
+
+{
+titulo:"Café da Manhã",
+descricao:"Comece bem o seu dia",
+imagem:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600"
+},
+
+{
+titulo:"Bolo Caseiro",
+descricao:"Diversos sabores",
+imagem:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600"
+}
+
 ];
 
-let pos=0;
+let atual=0;
 
-setInterval(()=>{
-    pos=(pos+1)%imagens.length;
-    document.getElementById("slide").src=imagens[pos];
+setInterval(() => {
+
+atual=(atual+1)%slides.length;
+
+document.getElementById("imagem").src=
+slides[atual].imagem;
+
+document.getElementById("titulo").innerText=
+slides[atual].titulo;
+
+document.getElementById("descricao").innerText=
+slides[atual].descricao;
+
 },5000);
 
 </script>
