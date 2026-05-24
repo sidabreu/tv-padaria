@@ -64,26 +64,46 @@ body{
 .painel-cafe{
     display:none;
     height:75vh;
-    background:#111;
+    background:linear-gradient(135deg,#1b120d,#3e2723);
     text-align:center;
-    padding:40px;
+    padding:50px;
     box-sizing:border-box;
 }
 
 .painel-cafe h1{
-    font-size:60px;
+    font-size:64px;
     color:#FFD700;
     margin:20px 0;
 }
 
 .painel-cafe h2{
-    font-size:38px;
-    margin-bottom:30px;
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.preco-cafe{
+    font-size:72px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.variacao-cafe{
+    font-size:44px;
+    font-weight:bold;
+}
+
+.alta{
+    color:#00ff66;
+}
+
+.baixa{
+    color:#ff4444;
 }
 
 .fonte{
-    font-size:22px;
-    color:#ccc;
+    font-size:24px;
+    color:#ddd;
+    margin-top:35px;
 }
 
 .rodape{
