@@ -12,24 +12,33 @@
 <body>
 
 <div class="topo">
-
     <div class="empresa">
         <img src="img/Logo1.jpg" class="logo">
         <span>PADARIA SANT'ANA</span>
     </div>
 
     <div id="relogio"></div>
-
 </div>
 
 <div class="slide">
 
-    <img id="imagem"
-    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600">
+    <div id="slideImagem" class="slide-conteudo">
+        <img id="imagem" src="">
+        <div class="texto">
+            <h2 id="titulo"></h2>
+            <p id="descricao"></p>
+        </div>
+    </div>
 
-    <div class="texto">
-        <h2 id="titulo">Pão Francês</h2>
-        <p id="descricao">Sempre quentinho</p>
+    <div id="slideCafe" class="painel-cafe">
+        <h1>☕ Mercado do Café</h1>
+        <h2>NY Arabica Coffee C</h2>
+
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+        </div>
+
+        <p class="fonte">Cotação automática via TradingView</p>
     </div>
 
 </div>
@@ -39,6 +48,16 @@
 </div>
 
 <script src="script.js"></script>
+
+<script src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js" async>
+{
+  "symbol": "ICEUS:KC1!",
+  "width": "100%",
+  "locale": "br",
+  "colorTheme": "dark",
+  "isTransparent": false
+}
+</script>
 
 </body>
 </html>
