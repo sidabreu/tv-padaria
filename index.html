@@ -5,66 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Padaria Sant'Ana</title>
+
 <link rel="stylesheet" href="style.css">
-<style>
-.logo{
-    height:90px;
-    margin-bottom:10px;
-}
-body{
-    margin:0;
-    background:#222;
-    color:white;
-    font-family:Arial,sans-serif;
-}
-
-.topo{
-    background:#8B4513;
-    padding:15px 30px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-    .empresa{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.empresa span{
-    font-size:32px;
-    font-weight:bold;
-}
-
-#relogio{
-    font-size:38px;
-    font-weight:bold;
-    color:#FFD700;
-}
-
-.slide img{
-    width:100%;
-    height:75vh;
-    object-fit:cover;
-}
-
-.texto{
-    text-align:center;
-    padding:20px;
-}
-
-.texto h2{
-    font-size:40px;
-    margin:0;
-}
-
-.texto p{
-    font-size:28px;
-}
-
-</style>
-
 </head>
 
 <body>
@@ -82,85 +24,21 @@ body{
 
 <div class="slide">
 
-<img id="imagem"
-src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600">
+    <img id="imagem"
+    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600">
 
-<div class="texto">
-
-<h2 id="titulo">
-Pão Francês
-</h2>
-
-<p id="descricao">
-Sempre quentinho
-</p>
+    <div class="texto">
+        <h2 id="titulo">Pão Francês</h2>
+        <p id="descricao">Sempre quentinho</p>
+    </div>
 
 </div>
 
+<div class="rodape">
+    WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias
 </div>
 
-<script>
-
-const slides = [
-
-{
-titulo:"Pão Francês",
-descricao:"Sempre quentinho",
-imagem:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600"
-},
-
-{
-titulo:"Café da Manhã",
-descricao:"Comece bem o seu dia",
-imagem:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600"
-},
-
-{
-titulo:"Bolo Caseiro",
-descricao:"Diversos sabores",
-imagem:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600"
-}
-
-];
-
-let atual=0;
-
-setInterval(() => {
-
-atual=(atual+1)%slides.length;
-
-document.getElementById("imagem").src=
-slides[atual].imagem;
-
-document.getElementById("titulo").innerText=
-slides[atual].titulo;
-
-document.getElementById("descricao").innerText=
-slides[atual].descricao;
-
-},5000);
-    function atualizarRelogio(){
-
-    const agora = new Date();
-
-    const hora = agora.toLocaleTimeString(
-        'pt-BR',
-        {
-            hour:'2-digit',
-            minute:'2-digit',
-            second:'2-digit'
-        }
-    );
-
-    document.getElementById("relogio")
-        .innerHTML = hora;
-}
-
-setInterval(atualizarRelogio,1000);
-
-atualizarRelogio();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
