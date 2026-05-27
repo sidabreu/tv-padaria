@@ -1,57 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Padaria Sant'Ana</title>
-
-<link rel="stylesheet" href="style.css">
-</head>
-
 <body>
 
-<div class="topo">
-    <div class="empresa">
-        <img src="img/Logo1.jpg" class="logo">
-        <span>PADARIA SANT'ANA</span>
-    </div>
+<div class="tv">
 
-    <div id="relogio"></div>
-</div>
-
-<div class="slide">
-
-    <div id="slideImagem" class="slide-conteudo">
-        <img id="imagem" src="">
-        <div class="texto">
-            <h2 id="titulo"></h2>
-            <p id="descricao"></p>
-        </div>
-    </div>
-
-    <div id="slideCafe" class="painel-cafe">
-        <h1>☕ Mercado do Café</h1>
-        <h2>NY Arabica Coffee C</h2>
-
-        <div class="preco-cafe alta">
-            ▲ 272,35 US¢/lb
+    <header class="topo">
+        <div class="empresa">
+            <img src="img/Logo1.jpg" class="logo">
+            <div>
+                <span class="nome">PADARIA SANT'ANA</span>
+                <small>Desde sempre com sabor de casa</small>
+            </div>
         </div>
 
-        <div class="variacao-cafe alta">
-            +1,25%
+        <div class="info-topo">
+            <span id="data"></span>
+            <span id="relogio"></span>
         </div>
+    </header>
 
-        <p class="fonte">Atualizado: 24/05/2026</p>
-    </div>
+    <main class="slide">
 
-</div>
+        <section id="slideImagem" class="slide-conteudo ativo">
+            <img id="imagem" src="" alt="Produto Padaria Sant'Ana">
 
-<div class="rodape">
-    WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias
+            <div class="chamada">
+                <span class="tag">DESTAQUE</span>
+                <h2 id="titulo"></h2>
+                <p id="descricao"></p>
+            </div>
+        </section>
+
+        <section id="slideCafe" class="painel-cafe">
+            <div class="tag">MERCADO DO CAFÉ</div>
+
+            <h1>☕ Café Arábica</h1>
+            <h2>NY Arabica Coffee C</h2>
+
+            <div class="preco-cafe alta">
+                ▲ 272,35 US¢/lb
+            </div>
+
+            <div class="variacao-cafe alta">
+                +1,25%
+            </div>
+
+            <p class="fonte">Atualizado: 24/05/2026</p>
+        </section>
+
+    </main>
+
+    <section class="tarja-promocao">
+        <strong>PROMOÇÃO DO DIA</strong>
+        <span id="promocao">Café + pão de queijo especial</span>
+    </section>
+
+    <footer class="rodape">
+        <div class="ticker">
+            <span>
+                WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias • Café quente a toda hora •
+            </span>
+        </div>
+    </footer>
+
 </div>
 
 <script src="script.js"></script>
 
 </body>
-</html>
