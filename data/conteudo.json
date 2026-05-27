@@ -1,6 +1,6 @@
 {
   "slides": [
-    { "tipo": "produto", "titulo": "Pão Francês", "descricao": "Sempre quentinho para você", "imagem": "assets/produtos/pao-frances.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Pão Francês", "descricao": "Sempre quentinho para você", "imagem": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1920", "tempo": 10 },
     { "tipo": "produto", "titulo": "Pão de Queijo", "descricao": "Receita tradicional mineira", "imagem": "assets/produtos/pao-queijo.jpg", "tempo": 10 },
     { "tipo": "produto", "titulo": "Broas e Roscas", "descricao": "Sabor de casa todos os dias", "imagem": "assets/produtos/broas-roscas.jpg", "tempo": 10 },
 
