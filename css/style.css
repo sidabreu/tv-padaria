@@ -1,1 +1,377 @@
+/* RESET */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#000;
+}
+
+#player{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+/* FUNDO */
+
+#midia-container{
+    position:absolute;
+    inset:0;
+}
+
+#imagem-slide,
+#video-slide{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* EFEITO CINEMATOGRÁFICO */
+
+#midia-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.70),
+        rgba(0,0,0,.20),
+        rgba(0,0,0,.05)
+    );
+}
+
+/* LOGO */
+
+.logo-box{
+    position:absolute;
+
+    top:20px;
+    left:20px;
+
+    z-index:50;
+}
+
+.logo-box img{
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    background:white;
+
+    border-radius:50%;
+
+    padding:8px;
+
+    box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+/* LAYOUTS */
+
+.layout{
+    position:absolute;
+    inset:0;
+
+    display:none;
+
+    z-index:10;
+}
+
+.layout.ativo{
+    display:block;
+}
+
+/* ======================================================
+   PRODUTO
+====================================================== */
+
+.produto-info{
+
+    position:absolute;
+
+    left:60px;
+    bottom:70px;
+
+    max-width:700px;
+}
+
+.produto-info h1{
+
+    font-size:72px;
+
+    color:white;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    text-shadow:0 4px 10px rgba(0,0,0,.6);
+}
+
+.produto-info p{
+
+    margin-top:10px;
+
+    font-size:34px;
+
+    color:#ffd54f;
+
+    font-weight:bold;
+
+    text-shadow:0 4px 10px rgba(0,0,0,.6);
+}
+
+/* ======================================================
+   PROMOÇÃO
+====================================================== */
+
+.promo-card{
+
+    position:absolute;
+
+    top:50%;
+    right:70px;
+
+    transform:translateY(-50%);
+
+    width:600px;
+
+    text-align:center;
+}
+
+.promo-tag{
+
+    background:#d40000;
+
+    color:white;
+
+    padding:15px;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+#promo-titulo{
+
+    color:white;
+
+    font-size:58px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+    text-shadow:0 4px 10px rgba(0,0,0,.6);
+}
+
+.promo-preco{
+
+    background:#d40000;
+
+    color:white;
+
+    font-size:110px;
+
+    font-weight:900;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+}
+
+#promo-descricao{
+
+    font-size:34px;
+
+    color:#ffd54f;
+
+    font-weight:bold;
+}
+
+/* ======================================================
+   INFO + INSTITUCIONAL
+====================================================== */
+
+.info-container{
+
+    position:absolute;
+
+    left:50px;
+    right:50px;
+
+    bottom:90px;
+}
+
+.categoria{
+
+    display:inline-block;
+
+    background:#d40000;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:26px;
+
+    padding:10px 20px;
+
+    margin-bottom:8px;
+}
+
+.info-box{
+
+    background:rgba(255,255,255,.96);
+
+    color:#111;
+
+    padding:18px 25px;
+
+    border-left:6px solid #d40000;
+
+    max-width:900px;
+}
+
+.info-box h1{
+
+    font-size:52px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.info-box p{
+
+    margin-top:8px;
+
+    font-size:28px;
+
+    line-height:1.4;
+}
+
+/* ======================================================
+   RODAPÉ
+====================================================== */
+
+#rodape{
+
+    position:absolute;
+
+    left:40px;
+    right:40px;
+
+    bottom:20px;
+
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    z-index:30;
+}
+
+/* RELÓGIO */
+
+#hora{
+
+    min-width:120px;
+
+    height:100%;
+
+    background:#d40000;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+/* TICKER */
+
+.ticker{
+
+    flex:1;
+
+    height:100%;
+
+    overflow:hidden;
+
+    background:rgba(0,0,0,.88);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.ticker-text{
+
+    white-space:nowrap;
+
+    padding-left:100%;
+
+    animation:ticker 25s linear infinite;
+
+    font-size:22px;
+}
+
+@keyframes ticker{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+/* ======================================================
+   FADE
+====================================================== */
+
+.fade-in{
+    animation:fadeIn 1s;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
