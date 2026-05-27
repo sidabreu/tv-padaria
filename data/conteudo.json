@@ -1,46 +1,51 @@
 {
   "slides": [
-    {
-      "tipo": "produto",
-      "titulo": "Pão Francês",
-      "descricao": "Sempre quentinho para você",
-      "imagem": "assets/produtos/pao-frances.jpg",
-      "tempo": 12
-    },
+    { "tipo": "produto", "titulo": "Pão Francês", "descricao": "Sempre quentinho para você", "imagem": "assets/produtos/pao-frances.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Pão de Queijo", "descricao": "Receita tradicional mineira", "imagem": "assets/produtos/pao-queijo.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Broas e Roscas", "descricao": "Sabor de casa todos os dias", "imagem": "assets/produtos/broas-roscas.jpg", "tempo": 10 },
 
-    {
-      "tipo": "produto",
-      "titulo": "Pão de Queijo",
-      "descricao": "Receita tradicional mineira",
-      "imagem": "assets/produtos/pao-queijo.jpg",
-      "tempo": 12
-    },
+    { "tipo": "promocao", "titulo": "Combo Café da Manhã", "descricao": "Café + pão de queijo", "preco": "R$ 8,99", "imagem": "assets/promocoes/combo-cafe.jpg", "tempo": 10 },
 
-    {
-      "tipo": "promocao",
-      "titulo": "Combo Café da Manhã",
-      "descricao": "Café + pão de queijo",
-      "preco": "R$ 8,99",
-      "imagem": "assets/promocoes/combo-cafe.jpg",
-      "tempo": 10
-    },
+    { "tipo": "produto", "titulo": "Salgados Assados", "descricao": "Fresquinhos e saborosos", "imagem": "assets/produtos/salgados-assados.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Salgados Fritos", "descricao": "Crocantes na medida certa", "imagem": "assets/produtos/salgados-fritos.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Coxinha", "descricao": "Clássica, cremosa e irresistível", "imagem": "assets/produtos/coxinha.jpg", "tempo": 10 },
 
-    {
-      "tipo": "informativo",
-      "categoria": "MERCADO DO CAFÉ",
-      "titulo": "Café arábica em alta",
-      "descricao": "Mercado registra valorização nesta semana",
-      "imagem": "assets/institucional/cafe.jpg",
-      "tempo": 8
-    },
+    { "tipo": "promocao", "titulo": "Combo Lanche", "descricao": "Salgado + refrigerante", "preco": "R$ 12,99", "imagem": "assets/promocoes/combo-lanche.jpg", "tempo": 10 },
 
-    {
-      "tipo": "institucional",
-      "categoria": "NOSSA HISTÓRIA",
-      "titulo": "Tradição e qualidade",
-      "descricao": "Há anos levando sabor e confiança aos nossos clientes.",
-      "imagem": "assets/institucional/historia.jpg",
-      "tempo": 10
-    }
+    { "tipo": "produto", "titulo": "Lanches Naturais", "descricao": "Leves, práticos e deliciosos", "imagem": "assets/produtos/lanches-naturais.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Sanduíches Especiais", "descricao": "Perfeitos para qualquer hora", "imagem": "assets/produtos/sanduiches.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Misto Quente", "descricao": "Simples, gostoso e sempre bem feito", "imagem": "assets/produtos/misto-quente.jpg", "tempo": 10 },
+
+    { "tipo": "promocao", "titulo": "Combo da Tarde", "descricao": "Café + bolo caseiro", "preco": "R$ 9,99", "imagem": "assets/promocoes/combo-tarde.jpg", "tempo": 10 },
+
+    { "tipo": "produto", "titulo": "Bolos Caseiros", "descricao": "Diversos sabores todos os dias", "imagem": "assets/produtos/bolos-caseiros.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Bolo de Cenoura", "descricao": "Com cobertura especial de chocolate", "imagem": "assets/produtos/bolo-cenoura.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Tortas Doces", "descricao": "Sobremesas para adoçar seu dia", "imagem": "assets/produtos/tortas-doces.jpg", "tempo": 10 },
+
+    { "tipo": "promocao", "titulo": "Sobremesa do Dia", "descricao": "Consulte as opções no balcão", "preco": "Especial", "imagem": "assets/promocoes/sobremesa-dia.jpg", "tempo": 10 },
+
+    { "tipo": "produto", "titulo": "Sonhos Recheados", "descricao": "Massa leve e recheio generoso", "imagem": "assets/produtos/sonhos.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Doces e Sobremesas", "descricao": "Uma vitrine cheia de sabor", "imagem": "assets/produtos/doces-sobremesas.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Biscoitos Artesanais", "descricao": "Perfeitos para acompanhar o café", "imagem": "assets/produtos/biscoitos.jpg", "tempo": 10 },
+
+    { "tipo": "institucional", "categoria": "NOSSA HISTÓRIA", "titulo": "Tradição e qualidade", "descricao": "Uma padaria feita com carinho para nossos clientes.", "imagem": "assets/institucional/historia.jpg", "tempo": 10 },
+
+    { "tipo": "produto", "titulo": "Café Coado", "descricao": "Aquele aroma que combina com pão fresquinho", "imagem": "assets/produtos/cafe-coado.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Cappuccino", "descricao": "Cremoso e perfeito para sua pausa", "imagem": "assets/produtos/cappuccino.jpg", "tempo": 10 },
+
+    { "tipo": "promocao", "titulo": "Combo Família", "descricao": "Pães + frios + café", "preco": "Consulte", "imagem": "assets/promocoes/combo-familia.jpg", "tempo": 10 },
+
+    { "tipo": "informativo", "categoria": "MERCADO DO CAFÉ", "titulo": "Cotação do café", "descricao": "Informação para produtores e clientes da região.", "imagem": "assets/institucional/cafe.jpg", "tempo": 10 },
+
+    { "tipo": "produto", "titulo": "Encomendas de Bolos", "descricao": "Faça sua encomenda para festas e eventos", "imagem": "assets/produtos/encomendas-bolos.jpg", "tempo": 10 },
+    { "tipo": "produto", "titulo": "Salgados para Festa", "descricao": "Consulte opções para encomenda", "imagem": "assets/produtos/salgados-festa.jpg", "tempo": 10 },
+
+    { "tipo": "institucional", "categoria": "PADARIA SANT'ANA", "titulo": "Atendimento com carinho", "descricao": "Mais sabor, conforto e qualidade para você.", "imagem": "assets/institucional/equipe.jpg", "tempo": 10 },
+
+    { "tipo": "promocao", "titulo": "Oferta Relâmpago", "descricao": "Produtos selecionados no balcão", "preco": "Hoje", "imagem": "assets/promocoes/oferta-relampago.jpg", "tempo": 10 },
+
+    { "tipo": "institucional", "categoria": "NOVA SANT'ANA", "titulo": "Um novo espaço para você", "descricao": "Mais conforto, mais variedade e o mesmo sabor de sempre.", "imagem": "assets/institucional/reinauguracao.jpg", "tempo": 10 },
+
+    { "tipo": "informativo", "categoria": "ENCOMENDAS", "titulo": "Aceitamos encomendas", "descricao": "Bolos, salgados e produtos especiais para sua festa.", "imagem": "assets/institucional/encomendas.jpg", "tempo": 10 }
   ]
 }
