@@ -14,7 +14,7 @@ async function carregarConteudo() {
 
     try {
 
-        const resposta = await fetch("dados/conteudo.json");
+        const resposta = await fetch("/tv-padaria/dados/conteudo.json");
 
         const dados = await resposta.json();
 
