@@ -1,116 +1,253 @@
-body{
-    margin:0;
-    background:#222;
-    color:white;
-    font-family:Arial, sans-serif;
-    overflow:hidden;
+* {
+    box-sizing: border-box;
 }
 
-.logo{
-    height:90px;
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
-.topo{
-    background:#8B4513;
-    padding:15px 30px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.tv {
+    width: 100vw;
+    height: 100vh;
+    background: #111;
 }
 
-.empresa{
-    display:flex;
-    align-items:center;
-    gap:15px;
+/* TOPO */
+.topo {
+    height: 110px;
+    background: linear-gradient(90deg, #5c0000, #b00000);
+    padding: 12px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #ffd700;
 }
 
-.empresa span{
-    font-size:32px;
-    font-weight:bold;
+.empresa {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
-#relogio{
-    font-size:38px;
-    font-weight:bold;
-    color:#FFD700;
+.logo {
+    height: 85px;
+    width: 85px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: white;
 }
 
-.slide{
-    height:75vh;
+.nome,
+.empresa span {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-.slide-conteudo img{
-    width:100%;
-    height:60vh;
-    object-fit:cover;
+.empresa small {
+    display: block;
+    font-size: 18px;
+    color: #ffe8a3;
+    margin-top: 4px;
 }
 
-.texto{
-    text-align:center;
-    padding:20px;
+.info-topo {
+    text-align: right;
 }
 
-.texto h2{
-    font-size:42px;
-    margin:0;
-    color:#FFD700;
+#data {
+    display: block;
+    font-size: 22px;
+    color: #fff;
 }
 
-.texto p{
-    font-size:30px;
-    margin:8px 0 0 0;
+#relogio {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffd700;
 }
 
-.painel-cafe{
-    display:none;
-    height:75vh;
-    background:linear-gradient(135deg,#1b120d,#3e2723);
-    text-align:center;
-    padding:50px;
-    box-sizing:border-box;
+/* ÁREA PRINCIPAL */
+.slide {
+    height: calc(100vh - 110px - 75px - 70px);
+    position: relative;
+    background: #000;
 }
 
-.painel-cafe h1{
-    font-size:64px;
-    color:#FFD700;
-    margin:20px 0;
+.slide-conteudo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.painel-cafe h2{
-    font-size:42px;
-    margin-bottom:40px;
+.slide-conteudo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.preco-cafe{
-    font-size:72px;
-    font-weight:bold;
-    margin:25px 0;
+.slide-conteudo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.65)
+    );
 }
 
-.variacao-cafe{
-    font-size:44px;
-    font-weight:bold;
+.chamada,
+.texto {
+    position: absolute;
+    left: 60px;
+    bottom: 45px;
+    max-width: 850px;
+    z-index: 2;
+    text-align: left;
+    padding: 0;
 }
 
-.alta{
-    color:#00ff66;
+.tag {
+    display: inline-block;
+    background: #d00000;
+    color: white;
+    padding: 10px 18px;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 18px;
 }
 
-.baixa{
-    color:#ff4444;
+.texto h2,
+.chamada h2 {
+    font-size: 68px;
+    margin: 0;
+    color: #ffd700;
+    font-weight: 900;
+    text-shadow: 3px 3px 8px #000;
 }
 
-.fonte{
-    font-size:24px;
-    color:#ddd;
-    margin-top:35px;
+.texto p,
+.chamada p {
+    font-size: 34px;
+    margin-top: 12px;
+    color: #fff;
+    text-shadow: 2px 2px 6px #000;
 }
 
-.rodape{
-    background:#8B4513;
-    color:white;
-    text-align:center;
-    padding:15px;
-    font-size:24px;
-    font-weight:bold;
+/* PAINEL CAFÉ */
+.painel-cafe {
+    display: none;
+    height: 100%;
+    background:
+        radial-gradient(circle at top left, #5c2600, transparent 35%),
+        linear-gradient(135deg, #120806, #3e1712, #120806);
+    text-align: center;
+    padding: 55px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.painel-cafe h1 {
+    font-size: 70px;
+    color: #ffd700;
+    margin: 20px 0;
+}
+
+.painel-cafe h2 {
+    font-size: 42px;
+    margin-bottom: 35px;
+}
+
+.preco-cafe {
+    font-size: 82px;
+    font-weight: 900;
+    margin: 20px 0;
+}
+
+.variacao-cafe {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.alta {
+    color: #00ff66;
+}
+
+.baixa {
+    color: #ff4444;
+}
+
+.fonte {
+    font-size: 24px;
+    color: #ddd;
+    margin-top: 30px;
+}
+
+/* TARJA PROMOÇÃO */
+.tarja-promocao {
+    height: 75px;
+    background: #d00000;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 34px;
+    font-weight: 900;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+}
+
+.tarja-promocao strong {
+    background: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    margin-right: 25px;
+    color: #ffd700;
+}
+
+.tarja-promocao span {
+    color: white;
+}
+
+/* RODAPÉ TICKER */
+.rodape {
+    height: 70px;
+    background: #111;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-top: 4px solid #b00000;
+}
+
+.ticker {
+    white-space: nowrap;
+    animation: ticker 25s linear infinite;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.ticker span {
+    padding-left: 100vw;
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
