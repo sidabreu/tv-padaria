@@ -1,63 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria Sant'Ana TV</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
 <div class="tv">
 
     <header class="topo">
         <div class="empresa">
-            <img src="img/Logo1.jpg" class="logo">
+            <img src="img/Logo1.jpg" class="logo" alt="Padaria Sant'Ana">
             <div>
-                <span class="nome">PADARIA SANT'ANA</span>
-                <small>Desde sempre com sabor de casa</small>
+                <span>PADARIA SANT'ANA</span>
+                <small>Informação, sabor e tradição</small>
             </div>
         </div>
 
-        <div class="info-topo">
-            <span id="data"></span>
-            <span id="relogio"></span>
+        <div class="topo-direita">
+            <div id="data"></div>
+            <div id="relogio"></div>
         </div>
     </header>
 
     <main class="slide">
 
-        <section id="slideImagem" class="slide-conteudo ativo">
+        <section id="slideImagem" class="slide-imagem">
+
             <img id="imagem" src="" alt="Produto Padaria Sant'Ana">
 
-            <div class="chamada">
-                <span class="tag">DESTAQUE</span>
-                <h2 id="titulo"></h2>
-                <p id="descricao"></p>
+            <div class="selo-local">SANT'ANA TV</div>
+
+            <div class="tarjas">
+                <div class="tarja-vermelha">
+                    <span id="categoria">DESTAQUE DO DIA</span>
+                    <span class="ao-vivo">AO VIVO</span>
+                </div>
+
+                <div class="tarja-branca">
+                    <h1 id="titulo"></h1>
+                    <p id="descricao"></p>
+                </div>
             </div>
+
         </section>
 
         <section id="slideCafe" class="painel-cafe">
-            <div class="tag">MERCADO DO CAFÉ</div>
 
-            <h1>☕ Café Arábica</h1>
-            <h2>NY Arabica Coffee C</h2>
+            <div class="selo-local">MERCADO</div>
 
-            <div class="preco-cafe alta">
-                ▲ 272,35 US¢/lb
+            <div class="conteudo-cafe">
+                <h1>☕ Mercado do Café</h1>
+                <h2>NY Arabica Coffee C</h2>
+
+                <div class="preco-cafe alta">
+                    ▲ 272,35 US¢/lb
+                </div>
+
+                <div class="variacao-cafe alta">
+                    +1,25%
+                </div>
+
+                <p class="fonte">Atualizado: 24/05/2026</p>
             </div>
 
-            <div class="variacao-cafe alta">
-                +1,25%
+            <div class="tarjas">
+                <div class="tarja-vermelha">
+                    <span>COTAÇÃO DO CAFÉ</span>
+                    <span class="ao-vivo">AGORA</span>
+                </div>
+
+                <div class="tarja-branca">
+                    <h1>Café arábica opera em alta</h1>
+                    <p>Informação para produtores e clientes da região</p>
+                </div>
             </div>
 
-            <p class="fonte">Atualizado: 24/05/2026</p>
         </section>
 
     </main>
 
-    <section class="tarja-promocao">
-        <strong>PROMOÇÃO DO DIA</strong>
-        <span id="promocao">Café + pão de queijo especial</span>
-    </section>
+    <footer class="rodape-cnn">
+        <div class="hora-rodape" id="horaRodape">--:--</div>
 
-    <footer class="rodape">
         <div class="ticker">
             <span>
-                WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias • Café quente a toda hora •
+                WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias • Café quentinho • Padaria Sant'Ana •
             </span>
+        </div>
+
+        <div class="marca-rodape">
+            SANT'ANA TV
         </div>
     </footer>
 
@@ -66,3 +103,4 @@
 <script src="script.js"></script>
 
 </body>
+</html>
