@@ -1,106 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padaria Sant'Ana TV</title>
 
-    <link rel="stylesheet" href="style.css">
+    <title>Sant'Ana TV</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="tv">
+    <div id="player">
 
-    <header class="topo">
-        <div class="empresa">
-            <img src="img/Logo1.jpg" class="logo" alt="Padaria Sant'Ana">
-            <div>
-                <span>PADARIA SANT'ANA</span>
-                <small>Informação, sabor e tradição</small>
-            </div>
+        <!-- MÍDIA -->
+        <div id="midia-container">
+
+            <img id="imagem-slide" src="" alt="" hidden>
+
+            <video id="video-slide"
+                   muted
+                   autoplay
+                   playsinline
+                   hidden>
+            </video>
+
         </div>
 
-        <div class="topo-direita">
-            <div id="data"></div>
-            <div id="relogio"></div>
-        </div>
-    </header>
-
-    <main class="slide">
-
-        <section id="slideImagem" class="slide-imagem">
-
-            <img id="imagem" src="" alt="Produto Padaria Sant'Ana">
-
-            <div class="selo-local">SANT'ANA TV</div>
-
-            <div class="tarjas">
-                <div class="tarja-vermelha">
-                    <span id="categoria">DESTAQUE DO DIA</span>
-                    <span class="ao-vivo">AO VIVO</span>
-                </div>
-
-                <div class="tarja-branca">
-                    <h1 id="titulo"></h1>
-                    <p id="descricao"></p>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="slideCafe" class="painel-cafe">
-
-            <div class="selo-local">MERCADO</div>
-
-            <div class="conteudo-cafe">
-                <h1>☕ Mercado do Café</h1>
-                <h2>NY Arabica Coffee C</h2>
-
-                <div class="preco-cafe alta">
-                    ▲ 272,35 US¢/lb
-                </div>
-
-                <div class="variacao-cafe alta">
-                    +1,25%
-                </div>
-
-                <p class="fonte">Atualizado: 24/05/2026</p>
-            </div>
-
-            <div class="tarjas">
-                <div class="tarja-vermelha">
-                    <span>COTAÇÃO DO CAFÉ</span>
-                    <span class="ao-vivo">AGORA</span>
-                </div>
-
-                <div class="tarja-branca">
-                    <h1>Café arábica opera em alta</h1>
-                    <p>Informação para produtores e clientes da região</p>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer class="rodape-cnn">
-        <div class="hora-rodape" id="horaRodape">--:--</div>
-
-        <div class="ticker">
-            <span>
-                WhatsApp: (35) XXXX-XXXX • Encomendas de bolos • Pães fresquinhos todos os dias • Café quentinho • Padaria Sant'Ana •
-            </span>
+        <!-- LOGO -->
+        <div class="logo-box">
+            <img src="assets/logo/Logo1.jpg" alt="Padaria Sant'Ana">
         </div>
 
-        <div class="marca-rodape">
-            SANT'ANA TV
+        <!-- LAYOUT PRODUTO -->
+        <div id="layout-produto" class="layout">
+
+            <div class="produto-info">
+
+                <h1 id="produto-titulo"></h1>
+
+                <p id="produto-descricao"></p>
+
+            </div>
+
         </div>
-    </footer>
 
-</div>
+        <!-- LAYOUT PROMOÇÃO -->
+        <div id="layout-promocao" class="layout">
 
-<script src="script.js"></script>
+            <div class="promo-card">
+
+                <div class="promo-tag">
+                    PROMOÇÃO EM DESTAQUE
+                </div>
+
+                <h1 id="promo-titulo"></h1>
+
+                <div id="promo-preco" class="promo-preco">
+                </div>
+
+                <p id="promo-descricao"></p>
+
+            </div>
+
+        </div>
+
+        <!-- LAYOUT INFORMATIVO -->
+        <div id="layout-info" class="layout">
+
+            <div class="info-container">
+
+                <div class="categoria">
+                    <span id="info-categoria"></span>
+                </div>
+
+                <div class="info-box">
+
+                    <h1 id="info-titulo"></h1>
+
+                    <p id="info-descricao"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- LAYOUT INSTITUCIONAL -->
+        <div id="layout-inst" class="layout">
+
+            <div class="info-container">
+
+                <div class="categoria">
+                    <span id="inst-categoria"></span>
+                </div>
+
+                <div class="info-box">
+
+                    <h1 id="inst-titulo"></h1>
+
+                    <p id="inst-descricao"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RODAPÉ -->
+        <div id="rodape">
+
+            <div id="hora">
+                00:00
+            </div>
+
+            <div class="ticker">
+
+                <div class="ticker-text">
+
+                    WhatsApp (35) XXXX-XXXX •
+                    Encomendas de bolos •
+                    Pães fresquinhos todos os dias •
+                    Café especial •
+                    Padaria Sant'Ana •
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
 
 </body>
+
 </html>
