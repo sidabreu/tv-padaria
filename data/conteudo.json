@@ -1,1 +1,46 @@
+{
+  "slides": [
+    {
+      "tipo": "produto",
+      "titulo": "Pão Francês",
+      "descricao": "Sempre quentinho para você",
+      "imagem": "assets/produtos/pao-frances.jpg",
+      "tempo": 12
+    },
 
+    {
+      "tipo": "produto",
+      "titulo": "Pão de Queijo",
+      "descricao": "Receita tradicional mineira",
+      "imagem": "assets/produtos/pao-queijo.jpg",
+      "tempo": 12
+    },
+
+    {
+      "tipo": "promocao",
+      "titulo": "Combo Café da Manhã",
+      "descricao": "Café + pão de queijo",
+      "preco": "R$ 8,99",
+      "imagem": "assets/promocoes/combo-cafe.jpg",
+      "tempo": 10
+    },
+
+    {
+      "tipo": "informativo",
+      "categoria": "MERCADO DO CAFÉ",
+      "titulo": "Café arábica em alta",
+      "descricao": "Mercado registra valorização nesta semana",
+      "imagem": "assets/institucional/cafe.jpg",
+      "tempo": 8
+    },
+
+    {
+      "tipo": "institucional",
+      "categoria": "NOSSA HISTÓRIA",
+      "titulo": "Tradição e qualidade",
+      "descricao": "Há anos levando sabor e confiança aos nossos clientes.",
+      "imagem": "assets/institucional/historia.jpg",
+      "tempo": 10
+    }
+  ]
+}
