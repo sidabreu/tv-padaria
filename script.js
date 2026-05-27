@@ -1,20 +1,23 @@
 const slides = [
     {
         tipo: "imagem",
-        titulo: "Pão Francês",
-        descricao: "Sempre quentinho",
+        categoria: "PADARIA SANT'ANA",
+        titulo: "Pão francês saindo do forno",
+        descricao: "Sempre quentinho para o seu café da manhã",
         imagem: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600"
     },
     {
         tipo: "imagem",
-        titulo: "Café da Manhã",
-        descricao: "Comece bem o seu dia",
+        categoria: "CAFÉ DA MANHÃ",
+        titulo: "Comece bem o seu dia",
+        descricao: "Café fresco, pão de queijo e aquele atendimento especial",
         imagem: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600"
     },
     {
         tipo: "imagem",
-        titulo: "Bolo Caseiro",
-        descricao: "Diversos sabores",
+        categoria: "BOLOS CASEIROS",
+        titulo: "Bolos fresquinhos todos os dias",
+        descricao: "Diversos sabores para levar para casa",
         imagem: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600"
     },
     {
@@ -22,14 +25,7 @@ const slides = [
     }
 ];
 
-const promocoes = [
-    "☕ Café + Pão de Queijo por R$ 8,99",
-    "🥖 10 Pães Franceses por R$ 7,50",
-    "🎂 Bolos Caseiros todos os dias"
-];
-
 let atual = 0;
-let promoAtual = 0;
 
 function mostrarSlide() {
 
@@ -43,13 +39,14 @@ function mostrarSlide() {
 
     if (slide.tipo === "cafe") {
 
-        slideCafe.style.display = "flex";
+        slideCafe.style.display = "block";
 
     } else {
 
-        slideImagem.style.display = "flex";
+        slideImagem.style.display = "block";
 
         document.getElementById("imagem").src = slide.imagem;
+        document.getElementById("categoria").innerText = slide.categoria;
         document.getElementById("titulo").innerText = slide.titulo;
         document.getElementById("descricao").innerText = slide.descricao;
     }
@@ -66,33 +63,31 @@ function atualizarDataHora() {
 
     const agora = new Date();
 
-    document.getElementById("relogio").innerHTML =
-        agora.toLocaleTimeString("pt-BR", {
-            hour: "2-digit",
-            minute: "2-digit",
-            second: "2-digit"
-        });
+    const horaCompleta = agora.toLocaleTimeString("pt-BR", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    });
+
+    const horaMinuto = agora.toLocaleTimeString("pt-BR", {
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+    document.getElementById("relogio").innerHTML = horaCompleta;
 
     const data = document.getElementById("data");
 
     if (data) {
         data.innerHTML = agora.toLocaleDateString("pt-BR");
     }
+
+    const horaRodape = document.getElementById("horaRodape");
+
+    if (horaRodape) {
+        horaRodape.innerHTML = horaMinuto;
+    }
 }
 
 setInterval(atualizarDataHora, 1000);
 atualizarDataHora();
-
-function atualizarPromocao() {
-
-    const elemento = document.getElementById("promocao");
-
-    if (!elemento) return;
-
-    elemento.innerHTML = promocoes[promoAtual];
-
-    promoAtual = (promoAtual + 1) % promocoes.length;
-}
-
-setInterval(atualizarPromocao, 8000);
-atualizarPromocao();
