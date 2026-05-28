@@ -54,29 +54,9 @@ body{
 
 /* LOGO */
 
-.logo-box{
-    position:absolute;
 
-    top:35px;
-    left:40px;
 
-    z-index:50;
-}
 
-.logo-box img{
-    width:90px;
-    height:90px;
-
-    object-fit:contain;
-
-    background:white;
-
-    border-radius:50%;
-
-    padding:8px;
-
-    box-shadow:0 0 20px rgba(0,0,0,.5);
-}
 
 /* LAYOUTS */
 
@@ -273,89 +253,12 @@ body{
    RODAPÉ
 ====================================================== */
 
-#rodape{
-
-    position:absolute;
-
-    left:40px;
-    right:40px;
-
-    bottom:35px;
-
-    height:50px;
-
-    display:flex;
-
-    align-items:center;
-
-    z-index:30;
-}
 
 /* RELÓGIO */
 
-#hora{
 
-    min-width:120px;
 
-    height:100%;
 
-    background:#d40000;
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:28px;
-
-    font-weight:bold;
-}
-
-/* TICKER */
-
-.ticker{
-
-    flex:1;
-
-    height:100%;
-
-    overflow:hidden;
-
-    background:rgba(0,0,0,.88);
-
-    color:white;
-
-    display:flex;
-
-    align-items:center;
-
-    border:1px solid rgba(255,255,255,.15);
-}
-
-.ticker-text{
-
-    white-space:nowrap;
-
-    padding-left:100%;
-
-    animation:ticker 25s linear infinite;
-
-    font-size:22px;
-}
-
-@keyframes ticker{
-
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-100%);
-    }
-}
 
 /* ======================================================
    FADE
