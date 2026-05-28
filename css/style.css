@@ -374,4 +374,39 @@ body{
     to{
         opacity:1;
     }
+    .efeito-zoom-in {
+    animation: zoomIn 12s ease-in-out forwards;
+}
+
+.efeito-zoom-out {
+    animation: zoomOut 12s ease-in-out forwards;
+}
+
+.efeito-pan-left {
+    animation: panLeft 12s ease-in-out forwards;
+}
+
+.efeito-pan-right {
+    animation: panRight 12s ease-in-out forwards;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@keyframes zoomOut {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+}
+
+@keyframes panLeft {
+    from { transform: scale(1.06) translateX(0); }
+    to { transform: scale(1.06) translateX(-25px); }
+}
+
+@keyframes panRight {
+    from { transform: scale(1.06) translateX(0); }
+    to { transform: scale(1.06) translateX(25px); }
+}
 }
