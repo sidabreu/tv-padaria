@@ -48,12 +48,30 @@ function mostrarSlide(indice) {
     videoSlide.load();
 
     if (slide.imagem) {
-        imagemSlide.src = slide.imagem;
-        imagemSlide.hidden = false;
-        imagemSlide.classList.remove("fade-in");
-        void imagemSlide.offsetWidth;
-        imagemSlide.classList.add("fade-in");
-    }
+    imagemSlide.src = slide.imagem;
+    imagemSlide.hidden = false;
+
+    const efeitos = [
+        "efeito-zoom-in",
+        "efeito-zoom-out",
+        "efeito-pan-left",
+        "efeito-pan-right"
+    ];
+
+    imagemSlide.classList.remove(
+        "fade-in",
+        "efeito-zoom-in",
+        "efeito-zoom-out",
+        "efeito-pan-left",
+        "efeito-pan-right"
+    );
+
+    const efeitoEscolhido = efeitos[Math.floor(Math.random() * efeitos.length)];
+
+    void imagemSlide.offsetWidth;
+
+    imagemSlide.classList.add("fade-in", efeitoEscolhido);
+}
 
     if (slide.video) {
         videoSlide.src = slide.video;
