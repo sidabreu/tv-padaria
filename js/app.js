@@ -56,6 +56,13 @@ function mostrarSlide(indice) {
         imagemSlide.hidden = false;
         imagemSlide.classList.add("fade-in");
     }
+    if (slide.video) {
+
+    videoSlide.src = slide.video;
+    videoSlide.hidden = false;
+    videoSlide.currentTime = 0;
+    videoSlide.play();
+}
 
     switch (slide.tipo) {
 
@@ -99,6 +106,9 @@ function mostrarSlide(indice) {
             document.getElementById("info-descricao").textContent =
                 slide.descricao || "";
 
+            break;
+            
+            case "video":
             break;
 
         case "institucional":
