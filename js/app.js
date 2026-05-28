@@ -11,26 +11,19 @@ const layoutInfo = document.getElementById("layout-info");
 const layoutInst = document.getElementById("layout-inst");
 
 async function carregarConteudo() {
-
     try {
-
         const resposta = await fetch("/tv-padaria/data/conteudo.json");
-
         const dados = await resposta.json();
 
         slides = dados.slides;
-
         mostrarSlide(0);
 
     } catch (erro) {
-
         console.error("Erro ao carregar conteúdo:", erro);
-
     }
 }
 
 function esconderLayouts() {
-
     layoutProduto.classList.remove("ativo");
     layoutPromocao.classList.remove("ativo");
     layoutInfo.classList.remove("ativo");
@@ -38,7 +31,6 @@ function esconderLayouts() {
 }
 
 function mostrarSlide(indice) {
-
     if (!slides.length) return;
 
     clearTimeout(timerSlide);
@@ -50,90 +42,65 @@ function mostrarSlide(indice) {
     imagemSlide.hidden = true;
     videoSlide.hidden = true;
 
-    if (slide.imagem) {
+    imagemSlide.src = "";
+    videoSlide.pause();
+    videoSlide.removeAttribute("src");
+    videoSlide.load();
 
+    if (slide.imagem) {
         imagemSlide.src = slide.imagem;
         imagemSlide.hidden = false;
+        imagemSlide.classList.remove("fade-in");
+        void imagemSlide.offsetWidth;
         imagemSlide.classList.add("fade-in");
     }
-    if (slide.video) {
 
-    videoSlide.src = slide.video;
-    videoSlide.hidden = false;
-    videoSlide.currentTime = 0;
-    videoSlide.play();
-}
+    if (slide.video) {
+        videoSlide.src = slide.video;
+        videoSlide.hidden = false;
+        videoSlide.currentTime = 0;
+        videoSlide.play().catch(function (erro) {
+            console.error("Erro ao tocar vídeo:", erro);
+        });
+    }
 
     switch (slide.tipo) {
-
         case "produto":
-
             layoutProduto.classList.add("ativo");
-
-            document.getElementById("produto-titulo").textContent =
-                slide.titulo || "";
-
-            document.getElementById("produto-descricao").textContent =
-                slide.descricao || "";
-
+            document.getElementById("produto-titulo").textContent = slide.titulo || "";
+            document.getElementById("produto-descricao").textContent = slide.descricao || "";
             break;
 
         case "promocao":
-
             layoutPromocao.classList.add("ativo");
-
-            document.getElementById("promo-titulo").textContent =
-                slide.titulo || "";
-
-            document.getElementById("promo-preco").textContent =
-                slide.preco || "";
-
-            document.getElementById("promo-descricao").textContent =
-                slide.descricao || "";
-
+            document.getElementById("promo-titulo").textContent = slide.titulo || "";
+            document.getElementById("promo-preco").textContent = slide.preco || "";
+            document.getElementById("promo-descricao").textContent = slide.descricao || "";
             break;
 
         case "informativo":
-
             layoutInfo.classList.add("ativo");
-
-            document.getElementById("info-categoria").textContent =
-                slide.categoria || "";
-
-            document.getElementById("info-titulo").textContent =
-                slide.titulo || "";
-
-            document.getElementById("info-descricao").textContent =
-                slide.descricao || "";
-
-            break;
-            
-            case "video":
+            document.getElementById("info-categoria").textContent = slide.categoria || "";
+            document.getElementById("info-titulo").textContent = slide.titulo || "";
+            document.getElementById("info-descricao").textContent = slide.descricao || "";
             break;
 
         case "institucional":
-
             layoutInst.classList.add("ativo");
+            document.getElementById("inst-categoria").textContent = slide.categoria || "";
+            document.getElementById("inst-titulo").textContent = slide.titulo || "";
+            document.getElementById("inst-descricao").textContent = slide.descricao || "";
+            break;
 
-            document.getElementById("inst-categoria").textContent =
-                slide.categoria || "";
-
-            document.getElementById("inst-titulo").textContent =
-                slide.titulo || "";
-
-            document.getElementById("inst-descricao").textContent =
-                slide.descricao || "";
-
+        case "video":
             break;
     }
 
     const tempo = (slide.tempo || 10) * 1000;
-
     timerSlide = setTimeout(proximoSlide, tempo);
 }
 
 function proximoSlide() {
-
     indiceAtual++;
 
     if (indiceAtual >= slides.length) {
@@ -144,21 +111,18 @@ function proximoSlide() {
 }
 
 function atualizarRelogio() {
-
     const agora = new Date();
 
-    document.getElementById("hora").textContent =
-        agora.toLocaleTimeString(
-            "pt-BR",
-            {
-                hour: "2-digit",
-                minute: "2-digit"
-            }
-        );
+    const hora = document.getElementById("hora");
+
+    if (hora) {
+        hora.textContent = agora.toLocaleTimeString("pt-BR", {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+    }
 }
 
 setInterval(atualizarRelogio, 1000);
-
 atualizarRelogio();
-
 carregarConteudo();
