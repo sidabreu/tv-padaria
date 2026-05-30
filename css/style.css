@@ -277,6 +277,18 @@ body{
     to{
         opacity:1;
     }
+.produto-info h1{
+    font-family:'Bebas Neue', sans-serif;
+}
+
+.produto-info p{
+    font-family:'Montserrat', sans-serif;
+}
+
+.promo-preco{
+    font-family:'Anton', sans-serif;
+}
+    
     .efeito-zoom-in {
     animation: zoomIn 12s ease-in-out forwards;
 }
