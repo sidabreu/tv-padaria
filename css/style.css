@@ -269,7 +269,6 @@ body{
 }
 
 @keyframes fadeIn{
-
     from{
         opacity:0;
     }
@@ -277,19 +276,30 @@ body{
     to{
         opacity:1;
     }
-.produto-info h1{
-    font-family:'Bebas Neue', sans-serif;
 }
 
-.produto-info p{
-    font-family:'Montserrat', sans-serif;
+/* FONTES */
+
+.produto-info h1,
+.info-box h1,
+#promo-titulo{
+    font-family:'Bebas Neue', sans-serif !important;
+    letter-spacing:3px;
+}
+
+.produto-info p,
+.info-box p,
+#promo-descricao{
+    font-family:'Montserrat', sans-serif !important;
 }
 
 .promo-preco{
-    font-family:'Anton', sans-serif;
+    font-family:'Anton', sans-serif !important;
 }
-    
-    .efeito-zoom-in {
+
+/* EFEITOS NAS IMAGENS */
+
+.efeito-zoom-in {
     animation: zoomIn 12s ease-in-out forwards;
 }
 
