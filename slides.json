@@ -1,1 +1,211 @@
+{
+  "slides": [
 
+    {
+      "tipo":"abertura",
+      "categoria":"REINAUGURAÇÃO",
+      "titulo":"Padaria Sant'Ana",
+      "descricao":"Uma nova fase começa agora",
+      "video":"assets/logos/logo1.mp4",
+      "tempo":8
+    },
+
+    {
+      "tipo":"mensagem",
+      "automatica":true,
+      "imagem":"assets/fundos/fundo-cafe.jpg",
+      "tempo":8
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Pão Francês",
+      "descricao":"Sempre quentinho para você",
+      "imagem":"assets/produtos/pao-frances.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Pão de Queijo Mineiro",
+      "descricao":"Receita tradicional",
+      "imagem":"assets/produtos/pao-queijo.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"video",
+      "titulo":"Produção Diária",
+      "descricao":"Qualidade em cada detalhe",
+      "video":"assets/videos/producao.mp4",
+      "tempo":12
+    },
+
+    {
+      "tipo":"combo",
+      "tag":"COMBO CAFÉ",
+      "titulo":"Café da Manhã",
+      "descricao":"Café + pão de queijo",
+      "preco":"R$ 9,90",
+      "imagem":"assets/combos/combo-cafe.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Bolos Caseiros",
+      "descricao":"Diversos sabores todos os dias",
+      "imagem":"assets/produtos/bolo.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Roscas e Broas",
+      "descricao":"Sabor de Minas",
+      "imagem":"assets/produtos/rosca.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"abertura",
+      "categoria":"TRADIÇÃO",
+      "titulo":"Mais de 20 anos",
+      "descricao":"Fazendo parte da sua história",
+      "video":"assets/logos/logo2.mp4",
+      "tempo":8
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Coxinhas",
+      "descricao":"Sempre fresquinhas",
+      "imagem":"assets/produtos/coxinha.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Salgados Assados",
+      "descricao":"Qualidade e sabor",
+      "imagem":"assets/produtos/salgado.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"combo",
+      "tag":"COMBO LANCHE",
+      "titulo":"Salgado + Refrigerante",
+      "descricao":"A combinação perfeita",
+      "preco":"R$ 14,90",
+      "imagem":"assets/combos/combo-lanche.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"cafe",
+      "tempo":15
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Doces Artesanais",
+      "descricao":"Feitos com carinho",
+      "imagem":"assets/produtos/doces.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"video",
+      "titulo":"Pão saindo do forno",
+      "descricao":"Sempre fresquinho",
+      "video":"assets/videos/forno.mp4",
+      "tempo":12
+    },
+
+    {
+      "tipo":"noticias",
+      "tempo":15
+    },
+
+    {
+      "tipo":"institucional",
+      "categoria":"NOSSA HISTÓRIA",
+      "titulo":"Tradição e Confiança",
+      "descricao":"Há mais de duas décadas servindo nossos clientes.",
+      "imagem":"assets/institucional/historia.jpg",
+      "tempo":12
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Café Especial",
+      "descricao":"O melhor aroma da região",
+      "imagem":"assets/produtos/cafe.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"produto",
+      "titulo":"Capuccino",
+      "descricao":"Cremoso e delicioso",
+      "imagem":"assets/produtos/capuccino.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"combo",
+      "tag":"COMBO FAMÍLIA",
+      "titulo":"Mesa Completa",
+      "descricao":"Perfeito para compartilhar",
+      "preco":"Consulte",
+      "imagem":"assets/combos/combo-familia.jpg",
+      "tempo":10
+    },
+
+    {
+      "tipo":"abertura",
+      "categoria":"NOVA SANT'ANA",
+      "titulo":"Mais conforto",
+      "descricao":"Um novo ambiente para você",
+      "video":"assets/logos/logo3.mp4",
+      "tempo":8
+    },
+
+    {
+      "tipo":"video",
+      "titulo":"Reinauguração",
+      "descricao":"Conheça nosso novo espaço",
+      "video":"assets/videos/reinauguracao.mp4",
+      "tempo":15
+    },
+
+    {
+      "tipo":"institucional",
+      "categoria":"ATENDIMENTO",
+      "titulo":"Você é nossa prioridade",
+      "descricao":"Atendimento com carinho e qualidade.",
+      "imagem":"assets/institucional/equipe.jpg",
+      "tempo":12
+    },
+
+    {
+      "tipo":"abertura",
+      "categoria":"OBRIGADO",
+      "titulo":"Volte Sempre",
+      "descricao":"Padaria Sant'Ana agradece sua visita",
+      "video":"assets/logos/logo4.mp4",
+      "tempo":8
+    },
+
+    {
+      "tipo":"abertura",
+      "categoria":"PADARIA SANT'ANA",
+      "titulo":"Tradição e Sabor",
+      "descricao":"Todos os dias para sua família",
+      "video":"assets/logos/logo5.mp4",
+      "tempo":8
+    }
+
+  ]
+}
