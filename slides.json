@@ -1,211 +1,36 @@
-{
-  "slides": [
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:'Montserrat',Arial,sans-serif}
+#player{width:100vw;height:100vh;position:relative;overflow:hidden;background:#000}
+#midia-container{position:absolute;inset:0;overflow:hidden;background:linear-gradient(135deg,#1b120d,#3e2723,#5d4037)}
+#imagem-slide,#video-slide{width:100%;height:100%;object-fit:cover;display:none}
+#imagem-slide.midia-contain,#video-slide.midia-contain{width:76%;height:76%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);filter:drop-shadow(0 22px 50px rgba(0,0,0,.70))}
+#midia-container::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,rgba(0,0,0,.08),rgba(0,0,0,.36)),linear-gradient(to top,rgba(0,0,0,.80),rgba(0,0,0,.20),rgba(0,0,0,.06));pointer-events:none}
+.layout{position:absolute;inset:0;z-index:10;display:none}
+.layout.ativo{display:block}
+.layout-centro.ativo{display:flex;align-items:center;justify-content:center}
+.abertura-box,.painel,.mensagem-card{width:min(1120px,86vw);text-align:center;padding:50px 62px;border-radius:32px;background:rgba(20,13,9,.82);border:2px solid rgba(255,213,79,.52);box-shadow:0 28px 85px rgba(0,0,0,.70)}
+.abertura-box h1,.painel h1,.mensagem-card h1{font-family:'Bebas Neue',sans-serif;font-size:92px;line-height:.92;letter-spacing:4px;color:#ffd54f;font-weight:400;text-transform:uppercase}
+.abertura-box p,.mensagem-card p{color:#fff;font-size:36px;font-weight:900;margin-top:18px}
+.tag-dourada{display:inline-block;background:#ffd54f;color:#28130b;padding:12px 24px;font-size:24px;font-weight:900;letter-spacing:1px;margin-bottom:18px;border-radius:7px}
+.tag-vermelha,.combo-tag{display:inline-block;background:#d40000;color:#fff;padding:13px 26px;font-size:25px;font-weight:900;letter-spacing:1px;margin-bottom:18px;border-radius:7px}
+.produto-info{position:absolute;left:76px;bottom:82px;max-width:950px}
+.produto-info h1{font-family:'Bebas Neue',sans-serif;font-size:104px;line-height:.90;letter-spacing:4px;color:#fff;font-weight:400;text-transform:uppercase;text-shadow:0 8px 26px rgba(0,0,0,.9)}
+.produto-info p{margin-top:10px;font-size:36px;color:#ffd54f;font-weight:900;text-shadow:0 5px 16px rgba(0,0,0,.9)}
+.combo-card{position:absolute;top:50%;right:76px;transform:translateY(-50%);width:670px;text-align:center}
+#combo-titulo{font-family:'Bebas Neue',sans-serif;color:#fff;font-size:78px;line-height:.92;letter-spacing:4px;font-weight:400;text-transform:uppercase;margin-bottom:18px;text-shadow:0 8px 26px rgba(0,0,0,.9)}
+.combo-preco{font-family:'Anton',sans-serif;background:#d40000;color:#fff;font-size:126px;line-height:1;font-weight:400;padding:18px 24px;margin-bottom:18px;border-radius:18px;box-shadow:0 18px 45px rgba(0,0,0,.55)}
+#combo-descricao{font-size:35px;color:#ffd54f;font-weight:900;text-shadow:0 5px 16px rgba(0,0,0,.9)}
+.institucional-box{position:absolute;left:72px;bottom:76px;max-width:1050px}
+.institucional-box h1{font-family:'Bebas Neue',sans-serif;font-size:82px;line-height:.94;letter-spacing:3px;color:#fff;font-weight:400;text-transform:uppercase;text-shadow:0 8px 28px rgba(0,0,0,.9)}
+.institucional-box p{margin-top:14px;font-size:34px;line-height:1.23;color:#fff8e1;font-weight:800;text-shadow:0 5px 18px rgba(0,0,0,.9)}
+.painel h2{font-size:38px;color:#fff;margin-top:4px}.icone{font-size:72px;margin-bottom:6px}
+.cafe-preco{font-family:'Anton',sans-serif;font-size:98px;margin-top:26px}.cafe-variacao{font-size:48px;font-weight:900;margin-top:6px}.alta{color:#00ff66}.baixa{color:#ff4444}
+.info-dupla{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:28px}.info-dupla div{background:rgba(255,255,255,.10);border-radius:18px;padding:20px}.info-dupla span{display:block;color:#fff8e1;font-size:22px;font-weight:800}.info-dupla strong{display:block;color:#ffd54f;font-size:34px;margin-top:6px;font-family:'Anton',sans-serif;font-weight:400}
+.fonte{margin-top:24px;color:#ddd;font-size:22px;font-weight:700}
+#lista-noticias{list-style:none;margin-top:28px;text-align:left}#lista-noticias li{font-size:34px;line-height:1.22;color:white;font-weight:800;margin:18px 0;padding-left:18px;border-left:6px solid #ffd54f}.noticias-hora{font-family:'Anton',sans-serif;color:#ffd54f;font-size:46px;margin-top:18px}
+.texto-animado.anim-subir{animation:subirTexto 1s ease forwards}.texto-animado.anim-esquerda{animation:entrarEsquerda 1s ease forwards}.texto-animado.anim-direita{animation:entrarDireita 1s ease forwards}.texto-animado.anim-zoom{animation:zoomTexto .9s ease forwards}.texto-animado.anim-fade{animation:fadeTexto 1.1s ease forwards}
+@keyframes subirTexto{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}@keyframes entrarEsquerda{from{opacity:0;transform:translateX(-78px)}to{opacity:1;transform:translateX(0)}}@keyframes entrarDireita{from{opacity:0;transform:translateX(78px)}to{opacity:1;transform:translateX(0)}}@keyframes zoomTexto{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}@keyframes fadeTexto{from{opacity:0}to{opacity:1}}
+.efeito-zoom-in{animation:zoomIn 12s ease-in-out forwards}.efeito-zoom-out{animation:zoomOut 12s ease-in-out forwards}.efeito-pan-left{animation:panLeft 12s ease-in-out forwards}.efeito-pan-right{animation:panRight 12s ease-in-out forwards}.efeito-fade{animation:fadeMidia 1.2s ease forwards}
+@keyframes zoomIn{from{transform:scale(1)}to{transform:scale(1.08)}}@keyframes zoomOut{from{transform:scale(1.08)}to{transform:scale(1)}}@keyframes panLeft{from{transform:scale(1.06) translateX(0)}to{transform:scale(1.06) translateX(-34px)}}@keyframes panRight{from{transform:scale(1.06) translateX(0)}to{transform:scale(1.06) translateX(34px)}}@keyframes fadeMidia{from{opacity:.20}to{opacity:1}}
+@media(max-width:900px){.produto-info{left:28px;bottom:50px}.produto-info h1{font-size:58px}.produto-info p{font-size:23px}.combo-card{right:24px;width:82vw}#combo-titulo{font-size:48px}.combo-preco{font-size:72px}#combo-descricao{font-size:23px}.painel,.abertura-box,.mensagem-card{padding:28px;min-height:420px}.painel h1,.abertura-box h1,.mensagem-card h1{font-size:50px}.cafe-preco{font-size:58px}.info-dupla{grid-template-columns:1fr}#lista-noticias li{font-size:22px}}
 
-    {
-      "tipo":"abertura",
-      "categoria":"REINAUGURAÇÃO",
-      "titulo":"Padaria Sant'Ana",
-      "descricao":"Uma nova fase começa agora",
-      "video":"assets/logos/logo1.mp4",
-      "tempo":8
-    },
-
-    {
-      "tipo":"mensagem",
-      "automatica":true,
-      "imagem":"assets/fundos/fundo-cafe.jpg",
-      "tempo":8
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Pão Francês",
-      "descricao":"Sempre quentinho para você",
-      "imagem":"assets/produtos/pao-frances.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Pão de Queijo Mineiro",
-      "descricao":"Receita tradicional",
-      "imagem":"assets/produtos/pao-queijo.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"video",
-      "titulo":"Produção Diária",
-      "descricao":"Qualidade em cada detalhe",
-      "video":"assets/videos/producao.mp4",
-      "tempo":12
-    },
-
-    {
-      "tipo":"combo",
-      "tag":"COMBO CAFÉ",
-      "titulo":"Café da Manhã",
-      "descricao":"Café + pão de queijo",
-      "preco":"R$ 9,90",
-      "imagem":"assets/combos/combo-cafe.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Bolos Caseiros",
-      "descricao":"Diversos sabores todos os dias",
-      "imagem":"assets/produtos/bolo.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Roscas e Broas",
-      "descricao":"Sabor de Minas",
-      "imagem":"assets/produtos/rosca.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"abertura",
-      "categoria":"TRADIÇÃO",
-      "titulo":"Mais de 20 anos",
-      "descricao":"Fazendo parte da sua história",
-      "video":"assets/logos/logo2.mp4",
-      "tempo":8
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Coxinhas",
-      "descricao":"Sempre fresquinhas",
-      "imagem":"assets/produtos/coxinha.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Salgados Assados",
-      "descricao":"Qualidade e sabor",
-      "imagem":"assets/produtos/salgado.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"combo",
-      "tag":"COMBO LANCHE",
-      "titulo":"Salgado + Refrigerante",
-      "descricao":"A combinação perfeita",
-      "preco":"R$ 14,90",
-      "imagem":"assets/combos/combo-lanche.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"cafe",
-      "tempo":15
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Doces Artesanais",
-      "descricao":"Feitos com carinho",
-      "imagem":"assets/produtos/doces.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"video",
-      "titulo":"Pão saindo do forno",
-      "descricao":"Sempre fresquinho",
-      "video":"assets/videos/forno.mp4",
-      "tempo":12
-    },
-
-    {
-      "tipo":"noticias",
-      "tempo":15
-    },
-
-    {
-      "tipo":"institucional",
-      "categoria":"NOSSA HISTÓRIA",
-      "titulo":"Tradição e Confiança",
-      "descricao":"Há mais de duas décadas servindo nossos clientes.",
-      "imagem":"assets/institucional/historia.jpg",
-      "tempo":12
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Café Especial",
-      "descricao":"O melhor aroma da região",
-      "imagem":"assets/produtos/cafe.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"produto",
-      "titulo":"Capuccino",
-      "descricao":"Cremoso e delicioso",
-      "imagem":"assets/produtos/capuccino.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"combo",
-      "tag":"COMBO FAMÍLIA",
-      "titulo":"Mesa Completa",
-      "descricao":"Perfeito para compartilhar",
-      "preco":"Consulte",
-      "imagem":"assets/combos/combo-familia.jpg",
-      "tempo":10
-    },
-
-    {
-      "tipo":"abertura",
-      "categoria":"NOVA SANT'ANA",
-      "titulo":"Mais conforto",
-      "descricao":"Um novo ambiente para você",
-      "video":"assets/logos/logo3.mp4",
-      "tempo":8
-    },
-
-    {
-      "tipo":"video",
-      "titulo":"Reinauguração",
-      "descricao":"Conheça nosso novo espaço",
-      "video":"assets/videos/reinauguracao.mp4",
-      "tempo":15
-    },
-
-    {
-      "tipo":"institucional",
-      "categoria":"ATENDIMENTO",
-      "titulo":"Você é nossa prioridade",
-      "descricao":"Atendimento com carinho e qualidade.",
-      "imagem":"assets/institucional/equipe.jpg",
-      "tempo":12
-    },
-
-    {
-      "tipo":"abertura",
-      "categoria":"OBRIGADO",
-      "titulo":"Volte Sempre",
-      "descricao":"Padaria Sant'Ana agradece sua visita",
-      "video":"assets/logos/logo4.mp4",
-      "tempo":8
-    },
-
-    {
-      "tipo":"abertura",
-      "categoria":"PADARIA SANT'ANA",
-      "titulo":"Tradição e Sabor",
-      "descricao":"Todos os dias para sua família",
-      "video":"assets/logos/logo5.mp4",
-      "tempo":8
-    }
-
-  ]
-}
