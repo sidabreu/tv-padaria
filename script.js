@@ -1,93 +1,413 @@
-const slides = [
-    {
-        tipo: "imagem",
-        categoria: "PADARIA SANT'ANA",
-        titulo: "Pão francês saindo do forno",
-        descricao: "Sempre quentinho para o seu café da manhã",
-        imagem: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1600"
-    },
-    {
-        tipo: "imagem",
-        categoria: "CAFÉ DA MANHÃ",
-        titulo: "Comece bem o seu dia",
-        descricao: "Café fresco, pão de queijo e aquele atendimento especial",
-        imagem: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600"
-    },
-    {
-        tipo: "imagem",
-        categoria: "BOLOS CASEIROS",
-        titulo: "Bolos fresquinhos todos os dias",
-        descricao: "Diversos sabores para levar para casa",
-        imagem: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600"
-    },
-    {
-        tipo: "cafe"
-    }
+let slides = [];
+let atual = 0;
+let timerSlide = null;
+let noticias = [];
+
+let climaCache = {
+    hoje: "--° / --°",
+    amanha: "--° / --°"
+};
+
+const efeitosMidia = [
+    "efeito-zoom-in",
+    "efeito-zoom-out",
+    "efeito-pan-left",
+    "efeito-pan-right",
+    "efeito-fade"
 ];
 
-let atual = 0;
+const efeitosTexto = [
+    "anim-subir",
+    "anim-esquerda",
+    "anim-direita",
+    "anim-zoom",
+    "anim-fade"
+];
 
-function mostrarSlide() {
+const imagemSlide = document.getElementById("imagem-slide");
+const videoSlide = document.getElementById("video-slide");
 
-    const slide = slides[atual];
+const layouts = {
+    abertura: document.getElementById("layout-abertura"),
+    produto: document.getElementById("layout-produto"),
+    combo: document.getElementById("layout-combo"),
+    promocao: document.getElementById("layout-combo"),
+    video: document.getElementById("layout-produto"),
+    institucional: document.getElementById("layout-institucional"),
+    cafe: document.getElementById("layout-cafe"),
+    noticias: document.getElementById("layout-noticias"),
+    mensagem: document.getElementById("layout-mensagem")
+};
 
-    const slideImagem = document.getElementById("slideImagem");
-    const slideCafe = document.getElementById("slideCafe");
+async function iniciar(){
+    atualizarRelogios();
+    setInterval(atualizarRelogios, 1000);
 
-    slideImagem.style.display = "none";
-    slideCafe.style.display = "none";
+    carregarClima();
+    setInterval(carregarClima, 30 * 60 * 1000);
 
-    if (slide.tipo === "cafe") {
+    carregarNoticias();
+    setInterval(carregarNoticias, 30 * 60 * 1000);
 
-        slideCafe.style.display = "block";
+    slides = await carregarSlides();
+    mostrarSlide();
+}
 
-    } else {
-
-        slideImagem.style.display = "block";
-
-        document.getElementById("imagem").src = slide.imagem;
-        document.getElementById("categoria").innerText = slide.categoria;
-        document.getElementById("titulo").innerText = slide.titulo;
-        document.getElementById("descricao").innerText = slide.descricao;
+async function carregarSlides(){
+    try{
+        const resposta = await fetch("slides.json?cache=" + Date.now());
+        const dados = await resposta.json();
+        return dados.slides || [];
+    }catch(e){
+        console.error("Erro ao carregar slides.json", e);
+        return [];
     }
 }
 
-setInterval(() => {
-    atual = (atual + 1) % slides.length;
-    mostrarSlide();
-}, 10000);
-
-mostrarSlide();
-
-function atualizarDataHora() {
-
-    const agora = new Date();
-
-    const horaCompleta = agora.toLocaleTimeString("pt-BR", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
+function esconderTudo(){
+    Object.values(layouts).forEach(layout => {
+        if(layout){
+            layout.classList.remove("ativo");
+        }
     });
 
-    const horaMinuto = agora.toLocaleTimeString("pt-BR", {
+    imagemSlide.style.display = "none";
+    videoSlide.style.display = "none";
+
+    videoSlide.pause();
+
+    limparClasses(imagemSlide);
+    limparClasses(videoSlide);
+
+    document.querySelectorAll(".texto-animado").forEach(el => {
+        limparAnimacoesTexto(el);
+    });
+}
+
+function mostrarSlide(){
+    if(!slides.length){
+        return;
+    }
+
+    clearTimeout(timerSlide);
+
+    const slide = slides[atual];
+
+    esconderTudo();
+    aplicarMidia(slide);
+
+    switch(slide.tipo){
+        case "abertura":
+            mostrarAbertura(slide);
+            break;
+
+        case "combo":
+        case "promocao":
+            mostrarCombo(slide);
+            break;
+
+        case "institucional":
+            mostrarInstitucional(slide);
+            break;
+
+        case "cafe":
+            mostrarCafe(slide);
+            break;
+
+        case "noticias":
+            mostrarNoticias();
+            break;
+
+        case "mensagem":
+            mostrarMensagem(slide);
+            break;
+
+        default:
+            mostrarProduto(slide);
+            break;
+    }
+
+    const tempo = (slide.tempo || 10) * 1000;
+
+    timerSlide = setTimeout(() => {
+        atual = (atual + 1) % slides.length;
+        mostrarSlide();
+    }, tempo);
+}
+
+function aplicarMidia(slide){
+    if(slide.video){
+        videoSlide.src = slide.video;
+        videoSlide.style.display = "block";
+        videoSlide.loop = false;
+        videoSlide.currentTime = 0;
+
+        videoSlide.play().catch(() => {});
+
+        aplicarClasseMidia(videoSlide, slide);
+
+    }else if(slide.imagem){
+        imagemSlide.src = slide.imagem;
+        imagemSlide.style.display = "block";
+
+        aplicarClasseMidia(imagemSlide, slide);
+    }
+}
+
+function aplicarClasseMidia(elemento, slide){
+    if(slide.tipo === "abertura" || slide.tipo === "institucional"){
+        elemento.classList.add("midia-contain");
+    }
+
+    const efeito = slide.efeito || efeitosMidia[atual % efeitosMidia.length];
+
+    elemento.classList.add(efeito);
+}
+
+function mostrarAbertura(slide){
+    layouts.abertura.classList.add("ativo");
+
+    document.getElementById("abertura-categoria").innerText =
+        slide.categoria || "PADARIA SANT'ANA";
+
+    document.getElementById("abertura-titulo").innerText =
+        slide.titulo || "";
+
+    document.getElementById("abertura-descricao").innerText =
+        slide.descricao || "";
+
+    animarTexto(
+        document.querySelector("#layout-abertura .texto-animado")
+    );
+}
+
+function mostrarProduto(slide){
+    layouts.produto.classList.add("ativo");
+
+    document.getElementById("produto-titulo").innerText =
+        slide.titulo || "";
+
+    document.getElementById("produto-descricao").innerText =
+        slide.descricao || "";
+
+    animarTexto(
+        document.querySelector("#layout-produto .texto-animado")
+    );
+}
+
+function mostrarCombo(slide){
+    layouts.combo.classList.add("ativo");
+
+    document.getElementById("combo-tag").innerText =
+        slide.tag || "COMBO ESPECIAL";
+
+    document.getElementById("combo-titulo").innerText =
+        slide.titulo || "";
+
+    document.getElementById("combo-preco").innerText =
+        slide.preco || "Confira";
+
+    document.getElementById("combo-descricao").innerText =
+        slide.descricao || "";
+
+    animarTexto(
+        document.querySelector("#layout-combo .texto-animado")
+    );
+}
+
+function mostrarInstitucional(slide){
+    layouts.institucional.classList.add("ativo");
+
+    document.getElementById("inst-categoria").innerText =
+        slide.categoria || "PADARIA SANT'ANA";
+
+    document.getElementById("inst-titulo").innerText =
+        slide.titulo || "";
+
+    document.getElementById("inst-descricao").innerText =
+        slide.descricao || "";
+
+    animarTexto(
+        document.querySelector("#layout-institucional .texto-animado")
+    );
+}
+
+function mostrarCafe(slide){
+    layouts.cafe.classList.add("ativo");
+
+    fetch("cotacao.json?cache=" + Date.now())
+        .then(r => r.json())
+        .then(cotacao => {
+
+            const alta = Number(cotacao.variacaoNumero || 0) >= 0;
+            const seta = alta ? "▲" : "▼";
+            const classe = alta ? "alta" : "baixa";
+
+            document.getElementById("cafe-nome").innerText =
+                cotacao.nome || "NY Arábica Futuro";
+
+            document.getElementById("cafe-preco").innerText =
+                `${seta} ${cotacao.preco || "--"} US¢/lb`;
+
+            document.getElementById("cafe-variacao").innerText =
+                cotacao.variacao || "0,00%";
+
+            document.getElementById("cafe-atualizado").innerText =
+                "Atualizado: " + (cotacao.atualizado || "--/--/----");
+
+            document.getElementById("cafe-preco").className =
+                "cafe-preco " + classe;
+
+            document.getElementById("cafe-variacao").className =
+                "cafe-variacao " + classe;
+        })
+        .catch(() => {});
+
+    document.getElementById("clima-cafe-hoje").innerText =
+        climaCache.hoje;
+
+    document.getElementById("clima-cafe-amanha").innerText =
+        climaCache.amanha;
+
+    animarTexto(
+        document.querySelector("#layout-cafe .texto-animado")
+    );
+}
+
+function mostrarNoticias(){
+    layouts.noticias.classList.add("ativo");
+
+    const ul = document.getElementById("lista-noticias");
+
+    ul.innerHTML = "";
+
+    const lista = noticias.length
+        ? noticias.slice(0, 4)
+        : [
+            "Notícias do Sul de Minas aparecerão aqui.",
+            "A atualização depende da disponibilidade do RSS.",
+            "A Padaria Sant'Ana deseja um ótimo dia."
+        ];
+
+    lista.forEach(titulo => {
+        const li = document.createElement("li");
+        li.innerText = titulo;
+        ul.appendChild(li);
+    });
+
+    animarTexto(
+        document.querySelector("#layout-noticias .texto-animado")
+    );
+}
+
+function mostrarMensagem(slide){
+    layouts.mensagem.classList.add("ativo");
+
+    let titulo = slide.titulo;
+    let descricao = slide.descricao;
+
+    if(slide.automatica){
+        const h = new Date().getHours();
+
+        if(h >= 5 && h < 12){
+            titulo = "Bom dia!";
+            descricao =
+                "Café fresquinho, pão quentinho e um excelente dia para você.";
+        }else if(h >= 12 && h < 18){
+            titulo = "Boa tarde!";
+            descricao =
+                "Que tal uma pausa especial com sabor de Padaria Sant'Ana?";
+        }else{
+            titulo = "Boa noite!";
+            descricao =
+                "Obrigado pela visita. É sempre um prazer receber você.";
+        }
+    }
+
+    document.getElementById("mensagem-titulo").innerText =
+        titulo || "Seja bem-vindo";
+
+    document.getElementById("mensagem-texto").innerText =
+        descricao || "Padaria Sant'Ana";
+
+    animarTexto(
+        document.querySelector("#layout-mensagem .texto-animado")
+    );
+}
+
+function animarTexto(el){
+    if(!el){
+        return;
+    }
+
+    limparAnimacoesTexto(el);
+
+    const anim = efeitosTexto[atual % efeitosTexto.length];
+
+    el.classList.add(anim);
+}
+
+function limparClasses(el){
+    el.classList.remove(
+        "midia-contain",
+        ...efeitosMidia
+    );
+}
+
+function limparAnimacoesTexto(el){
+    el.classList.remove(...efeitosTexto);
+}
+
+function atualizarRelogios(){
+    const hora = new Date().toLocaleTimeString("pt-BR", {
         hour: "2-digit",
         minute: "2-digit"
     });
 
-    document.getElementById("relogio").innerHTML = horaCompleta;
+    document.getElementById("hora-cafe").innerText = hora;
+    document.getElementById("hora-noticias").innerText = "🕒 " + hora;
+}
 
-    const data = document.getElementById("data");
+async function carregarClima(){
+    try{
+        const url =
+            "https://api.open-meteo.com/v1/forecast?latitude=-21.235&longitude=-45.758&daily=temperature_2m_max,temperature_2m_min&timezone=America%2FSao_Paulo";
 
-    if (data) {
-        data.innerHTML = agora.toLocaleDateString("pt-BR");
-    }
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
 
-    const horaRodape = document.getElementById("horaRodape");
+        const hojeMax = Math.round(dados.daily.temperature_2m_max[0]);
+        const hojeMin = Math.round(dados.daily.temperature_2m_min[0]);
+        const amanhaMax = Math.round(dados.daily.temperature_2m_max[1]);
+        const amanhaMin = Math.round(dados.daily.temperature_2m_min[1]);
 
-    if (horaRodape) {
-        horaRodape.innerHTML = horaMinuto;
+        climaCache.hoje = `${hojeMin}° / ${hojeMax}°`;
+        climaCache.amanha = `${amanhaMin}° / ${amanhaMax}°`;
+
+    }catch(e){
+        climaCache.hoje = "--° / --°";
+        climaCache.amanha = "--° / --°";
     }
 }
 
-setInterval(atualizarDataHora, 1000);
-atualizarDataHora();
+async function carregarNoticias(){
+    const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
+
+    const url =
+        "https://api.rss2json.com/v1/api.json?rss_url=" +
+        encodeURIComponent(rss);
+
+    try{
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
+
+        noticias = (dados.items || [])
+            .slice(0, 6)
+            .map(item => item.title);
+
+    }catch(e){
+        noticias = [];
+    }
+}
+
+iniciar();
