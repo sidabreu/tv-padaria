@@ -1,121 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sant'Ana TV</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TV Padaria Sant'Ana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<main id="player">
+  <div id="midia-container">
+    <img id="imagem-slide" alt="">
+    <video id="video-slide" muted playsinline></video>
+  </div>
 
-    <div id="player">
-
-        <!-- MÍDIA -->
-        <div id="midia-container">
-
-            <img id="imagem-slide" src="" alt="" hidden>
-
-            <video id="video-slide"
-                   muted
-                   autoplay
-                   playsinline
-                   hidden>
-            </video>
-
-        </div>
-
-       
-
-        <!-- LAYOUT PRODUTO -->
-        <div id="layout-produto" class="layout">
-
-            <div class="produto-info">
-
-                <h1 id="produto-titulo"></h1>
-
-                <p id="produto-descricao"></p>
-
-            </div>
-
-        </div>
-
-        <!-- LAYOUT PROMOÇÃO -->
-        <div id="layout-promocao" class="layout">
-
-            <div class="promo-card">
-
-                <div class="promo-tag">
-                    PROMOÇÃO EM DESTAQUE
-                </div>
-
-                <h1 id="promo-titulo"></h1>
-
-                <div id="promo-preco" class="promo-preco">
-                </div>
-
-                <p id="promo-descricao"></p>
-
-            </div>
-
-        </div>
-
-        <!-- LAYOUT INFORMATIVO -->
-        <div id="layout-info" class="layout">
-
-            <div class="info-container">
-
-                <div class="categoria">
-                    <span id="info-categoria"></span>
-                </div>
-
-                <div class="info-box">
-
-                    <h1 id="info-titulo"></h1>
-
-                    <p id="info-descricao"></p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- LAYOUT INSTITUCIONAL -->
-        <div id="layout-inst" class="layout">
-
-            <div class="info-container">
-
-                <div class="categoria">
-                    <span id="inst-categoria"></span>
-                </div>
-
-                <div class="info-box">
-
-                    <h1 id="inst-titulo"></h1>
-
-                    <p id="inst-descricao"></p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-       
+  <section id="layout-abertura" class="layout layout-centro">
+    <div class="abertura-box texto-animado">
+      <div id="abertura-categoria" class="tag-dourada"></div>
+      <h1 id="abertura-titulo"></h1>
+      <p id="abertura-descricao"></p>
     </div>
+  </section>
 
-    <script src="js/app.js"></script>
+  <section id="layout-produto" class="layout">
+    <div class="produto-info texto-animado">
+      <h1 id="produto-titulo"></h1>
+      <p id="produto-descricao"></p>
+    </div>
+  </section>
 
+  <section id="layout-combo" class="layout">
+    <div class="combo-card texto-animado">
+      <div id="combo-tag" class="combo-tag">COMBO ESPECIAL</div>
+      <h1 id="combo-titulo"></h1>
+      <div id="combo-preco" class="combo-preco"></div>
+      <p id="combo-descricao"></p>
+    </div>
+  </section>
+
+  <section id="layout-institucional" class="layout">
+    <div class="institucional-box texto-animado">
+      <div id="inst-categoria" class="tag-vermelha"></div>
+      <h1 id="inst-titulo"></h1>
+      <p id="inst-descricao"></p>
+    </div>
+  </section>
+
+  <section id="layout-cafe" class="layout layout-centro">
+    <div class="painel cafe-card texto-animado">
+      <div class="icone">☕</div>
+      <h1>MERCADO DO CAFÉ</h1>
+      <h2 id="cafe-nome">NY Arábica Futuro</h2>
+      <div id="cafe-preco" class="cafe-preco alta">▲ -- US¢/lb</div>
+      <div id="cafe-variacao" class="cafe-variacao alta">+0,00%</div>
+      <div class="info-dupla">
+        <div><span>🕒 Agora</span><strong id="hora-cafe">--:--</strong></div>
+        <div><span>🌤️ Hoje</span><strong id="clima-cafe-hoje">--° / --°</strong></div>
+        <div><span>🌤️ Amanhã</span><strong id="clima-cafe-amanha">--° / --°</strong></div>
+      </div>
+      <p id="cafe-atualizado" class="fonte">Atualizado: --/--/----</p>
+    </div>
+  </section>
+
+  <section id="layout-noticias" class="layout layout-centro">
+    <div class="painel noticias-card texto-animado">
+      <h1>📰 SUL DE MINAS</h1>
+      <ul id="lista-noticias"><li>Carregando notícias...</li></ul>
+      <div class="noticias-hora" id="hora-noticias">--:--</div>
+      <p class="fonte">Fonte: G1 Sul de Minas</p>
+    </div>
+  </section>
+
+  <section id="layout-mensagem" class="layout layout-centro">
+    <div class="mensagem-card texto-animado">
+      <h1 id="mensagem-titulo">Bom dia!</h1>
+      <p id="mensagem-texto">Seja bem-vindo à Padaria Sant'Ana.</p>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
 </body>
-
 </html>
