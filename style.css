@@ -460,10 +460,10 @@ body {
 #layout-noticias{
     background:
         linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.75)
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.65)
         ),
-        url("assets/fundos/fundo-noticia.png");
+        url("assets/fundos/fundo-cafe.png");
 
     background-size:cover;
     background-position:center;
