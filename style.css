@@ -468,3 +468,41 @@ body {
     background-size:cover;
     background-position:center;
 }
+#layout-clima{
+    background:
+        linear-gradient(
+            rgba(0,0,0,.45),
+            rgba(0,0,0,.75)
+        ),
+        url("assets/fundos/fundo-clima.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+#clima-cidade{
+    font-size:42px;
+    color:white;
+    margin-top:10px;
+}
+
+.clima-agora{
+    margin-top:25px;
+}
+
+#clima-agora{
+    display:block;
+    font-size:100px;
+    color:#ffd54f;
+    font-family:'Anton',sans-serif;
+}
+
+#clima-descricao{
+    font-size:30px;
+    color:white;
+    margin-top:10px;
+}
+
+.clima-dupla{
+    grid-template-columns:1fr 1fr;
+}
