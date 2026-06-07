@@ -3,14 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>TV Padaria Sant'Ana</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <main id="player">
+
   <div id="midia-container">
     <img id="imagem-slide" alt="">
     <video id="video-slide" muted playsinline></video>
@@ -48,33 +54,64 @@
     </div>
   </section>
 
-  <section id="layout-cafe" class="layout layout-centro">
-     </div>
+  <section id="layout-clima" class="layout layout-centro">
+    <div class="painel clima-card texto-animado">
 
-      <div>
-        <span id="icone-amanha">
-          🌤️ Amanhã
-        </span>
+      <h1>🌤️ CLIMA</h1>
 
-        <strong id="clima-amanha">
-          --° / --°
+      <h2 id="clima-cidade">
+        Campos Gerais - MG
+      </h2>
+
+      <div class="clima-agora">
+        <span>AGORA</span>
+
+        <strong id="clima-agora">
+          --°C
         </strong>
+
+        <p id="clima-descricao">
+          Atualizando...
+        </p>
       </div>
 
+      <div class="info-dupla clima-dupla">
+
+        <div>
+          <span id="icone-hoje">
+            🌤️ Hoje
+          </span>
+
+          <strong id="clima-hoje">
+            --° / --°
+          </strong>
+        </div>
+
+        <div>
+          <span id="icone-amanha">
+            🌤️ Amanhã
+          </span>
+
+          <strong id="clima-amanha">
+            --° / --°
+          </strong>
+        </div>
+
+      </div>
+
+      <p class="fonte">
+        Atualizado automaticamente
+      </p>
+
     </div>
-
-    <p class="fonte">
-      Atualizado automaticamente
-    </p>
-
-  </div>
-
-</section>
+  </section>
 
   <section id="layout-noticias" class="layout layout-centro">
     <div class="painel noticias-card texto-animado">
       <h1>📰 SUL DE MINAS</h1>
-      <ul id="lista-noticias"><li>Carregando notícias...</li></ul>
+      <ul id="lista-noticias">
+        <li>Carregando notícias...</li>
+      </ul>
       <div class="noticias-hora" id="hora-noticias">--:--</div>
       <p class="fonte">Fonte: G1 Sul de Minas</p>
     </div>
@@ -86,7 +123,10 @@
       <p id="mensagem-texto">Seja bem-vindo à Padaria Sant'Ana.</p>
     </div>
   </section>
+
 </main>
+
 <script src="script.js"></script>
+
 </body>
 </html>
