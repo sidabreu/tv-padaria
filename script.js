@@ -5,13 +5,14 @@ const efeitosTexto=["anim-subir","anim-esquerda","anim-direita","anim-zoom","ani
 const imagemSlide=document.getElementById("imagem-slide");
 const videoSlide=document.getElementById("video-slide");
 const layouts={
- abertura:document.getElementById("layout-abertura"),
+  abertura:document.getElementById("layout-abertura"),
  produto:document.getElementById("layout-produto"),
  combo:document.getElementById("layout-combo"),
  promocao:document.getElementById("layout-combo"),
  video:document.getElementById("layout-produto"),
  institucional:document.getElementById("layout-institucional"),
  cafe:document.getElementById("layout-cafe"),
+ clima:document.getElementById("layout-clima"),
  noticias:document.getElementById("layout-noticias"),
  mensagem:document.getElementById("layout-mensagem")
 };
