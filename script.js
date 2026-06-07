@@ -236,6 +236,7 @@ function mostrarInstitucional(slide){
 }
 
 function mostrarClima(){
+
     layouts.clima.classList.add("ativo");
 
     document.getElementById("clima-agora").innerText =
@@ -256,8 +257,13 @@ function mostrarClima(){
     document.getElementById("clima-amanha").innerText =
         climaCache.amanha;
 
+    document.getElementById("frase-clima").innerText =
+        fraseAleatoriaClima();
+
     animarTexto(
-        document.querySelector("#layout-clima .texto-animado")
+        document.querySelector(
+            "#layout-clima .texto-animado"
+        )
     );
 }
 
@@ -469,7 +475,29 @@ async function carregarClima(){
         climaCache.iconeAmanha = "🌤️ Amanhã";
     }
 }
+const frasesClima = [
+    "☕ Aproveite o dia com um café fresquinho da Padaria Sant'Ana.",
+    "🥖 Pães quentinhos saindo do forno várias vezes ao dia.",
+    "🍰 Experimente nossos deliciosos bolos caseiros.",
+    "🌤️ Seja bem-vindo! É um prazer receber você.",
+    "☕ Tradição, qualidade e sabor em cada detalhe.",
+    "🥐 O melhor café da manhã começa aqui.",
+    "🍞 Sempre tem uma fornada especial esperando por você.",
+    "❤️ Obrigado pela preferência e pela confiança.",
+    "🌻 Desejamos um excelente dia para você e sua família.",
+    "🧀 Que tal um pão de queijo quentinho agora?",
+    "🍩 Doces, salgados e muitas novidades esperando por você.",
+    "☕ Faça uma pausa e aproveite nossos produtos fresquinhos.",
+    "🏡 Há anos fazendo parte dos melhores momentos da sua família.",
+    "😊 Nossa maior receita é atender você bem.",
+    "✨ Reinventando sabores, mantendo a tradição."
+];
 
+function fraseAleatoriaClima(){
+    return frasesClima[
+        Math.floor(Math.random() * frasesClima.length)
+    ];
+}
 async function carregarNoticias(){
     const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
 
