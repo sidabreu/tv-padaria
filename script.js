@@ -239,31 +239,44 @@ function mostrarClima(){
 
     layouts.clima.classList.add("ativo");
 
-    document.getElementById("clima-agora").innerText =
-        climaCache.agora;
+    const climaAgora = document.getElementById("clima-agora");
+    const climaDescricao = document.getElementById("clima-descricao");
+    const iconeHoje = document.getElementById("icone-hoje");
+    const climaHoje = document.getElementById("clima-hoje");
+    const iconeAmanha = document.getElementById("icone-amanha");
+    const climaAmanha = document.getElementById("clima-amanha");
+    const fraseClima = document.getElementById("frase-clima");
 
-    document.getElementById("clima-descricao").innerText =
-        climaCache.descricao;
+    if(climaAgora){
+        climaAgora.innerText = climaCache.agora;
+    }
 
-    document.getElementById("icone-hoje").innerText =
-        climaCache.iconeHoje;
+    if(climaDescricao){
+        climaDescricao.innerText = climaCache.descricao;
+    }
 
-    document.getElementById("clima-hoje").innerText =
-        climaCache.hoje;
+    if(iconeHoje){
+        iconeHoje.innerText = climaCache.iconeHoje;
+    }
 
-    document.getElementById("icone-amanha").innerText =
-        climaCache.iconeAmanha;
+    if(climaHoje){
+        climaHoje.innerText = climaCache.hoje;
+    }
 
-    document.getElementById("clima-amanha").innerText =
-        climaCache.amanha;
+    if(iconeAmanha){
+        iconeAmanha.innerText = climaCache.iconeAmanha;
+    }
 
-    document.getElementById("frase-clima").innerText =
-        fraseAleatoriaClima();
+    if(climaAmanha){
+        climaAmanha.innerText = climaCache.amanha;
+    }
+
+    if(fraseClima){
+        fraseClima.innerText = fraseAleatoriaClima();
+    }
 
     animarTexto(
-        document.querySelector(
-            "#layout-clima .texto-animado"
-        )
+        document.querySelector("#layout-clima .texto-animado")
     );
 }
 
