@@ -29,6 +29,13 @@
       "tempo": 10
     },
     {
+  "tipo":"video",
+  "titulo":"Pão Francês Quentinho",
+  "descricao":"Saindo do forno várias vezes ao dia",
+  "video":"assets/videos/pao-sal.mp4",
+  "tempo":12
+},
+    {
       "tipo": "video",
       "titulo": "Pão saindo do forno",
       "descricao": "Fresquinho todos os dias",
