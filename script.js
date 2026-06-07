@@ -5,7 +5,7 @@ const efeitosTexto=["anim-subir","anim-esquerda","anim-direita","anim-zoom","ani
 const imagemSlide=document.getElementById("imagem-slide");
 const videoSlide=document.getElementById("video-slide");
 const layouts={
-  abertura:document.getElementById("layout-abertura"),
+ abertura:document.getElementById("layout-abertura"),
  produto:document.getElementById("layout-produto"),
  combo:document.getElementById("layout-combo"),
  promocao:document.getElementById("layout-combo"),
@@ -35,10 +35,10 @@ function mostrarSlide(){
  if(!slides.length)return;clearTimeout(timerSlide);
  const slide=slides[atual];esconderTudo();aplicarMidia(slide);
  switch(slide.tipo){
-  case"abertura":mostrarAbertura(slide);break;
+ case"abertura":mostrarAbertura(slide);break;
   case"combo":case"promocao":mostrarCombo(slide);break;
   case"institucional":mostrarInstitucional(slide);break;
-  case"cafe":mostrarCafe(slide);break;
+  case"clima":mostrarClima();break;
   case"noticias":mostrarNoticias();break;
   case"mensagem":mostrarMensagem(slide);break;
   default:mostrarProduto(slide);
@@ -95,6 +95,22 @@ function mostrarCafe(slide){
  document.getElementById("clima-cafe-hoje").innerText=climaCache.hoje;
  document.getElementById("clima-cafe-amanha").innerText=climaCache.amanha;
  animarTexto(document.querySelector("#layout-cafe .texto-animado"));
+}
+function mostrarClima(){
+
+ layouts.clima.classList.add("ativo");
+
+ document.getElementById("clima-hoje").innerText =
+   climaCache.hoje;
+
+ document.getElementById("clima-amanha").innerText =
+   climaCache.amanha;
+
+ animarTexto(
+   document.querySelector(
+     "#layout-clima .texto-animado"
+   )
+ );
 }
 function mostrarNoticias(){
  layouts.noticias.classList.add("ativo");
