@@ -281,43 +281,45 @@ function mostrarClima(){
     );
 }
 
-function mostrarNoticias(){
-    layouts.noticias.classList.add("ativo");
-
-    const noticia = noticias[indiceNoticia] || {
-        titulo:"Notícias do Sul de Minas",
-        descricao:"Aguarde a atualização das principais manchetes.",
-        imagem:"assets/fundos/fundo-noticia.png"
-    };
-
-    const titulo = document.getElementById("noticia-titulo");
-    const descricao = document.getElementById("noticia-descricao");
-    const layoutNoticias = document.getElementById("layout-noticias");
-
-    if(titulo){
-        titulo.innerText = noticia.titulo;
-    }
-
-    if(descricao){
-        descricao.innerText = noticia.descricao;
-    }
-
-    if(layoutNoticias){
-        layoutNoticias.style.background =
-            `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.82)), url('${noticia.imagem}')`;
-
-        layoutNoticias.style.backgroundSize = "cover";
-        layoutNoticias.style.backgroundPosition = "center";
-    }
-
-    indiceNoticia =
-        (indiceNoticia + 1) % Math.max(noticias.length, 1);
-
-    animarTexto(
-        document.querySelector("#layout-noticias .texto-animado")
-    );
+function limparHtml(texto){
+    const div = document.createElement("div");
+    div.innerHTML = texto;
+    return div.innerText || "";
 }
 
+async function carregarNoticias(){
+    const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
+
+    const url =
+        "https://api.rss2json.com/v1/api.json?rss_url=" +
+        encodeURIComponent(rss);
+
+    try{
+        const resposta = await fetch(url);
+        const dados = await resposta.json();
+
+        noticias = (dados.items || [])
+            .slice(0, 3)
+            .map(item => ({
+                titulo: item.title || "Notícia do Sul de Minas",
+                descricao: limparHtml(
+                    item.description || "Veja os principais acontecimentos do Sul de Minas."
+                ),
+                imagem: item.thumbnail || "assets/fundos/fundo-noticia.png"
+            }));
+
+        console.log("Notícias carregadas:", noticias);
+
+    }catch(e){
+        console.error("Erro ao carregar notícias:", e);
+
+        noticias = [{
+            titulo: "Notícias do Sul de Minas",
+            descricao: "Aguarde a atualização das principais manchetes.",
+            imagem: "assets/fundos/fundo-noticia.png"
+        }];
+    }
+}
 function mostrarMensagem(slide){
     layouts.mensagem.classList.add("ativo");
 
@@ -523,24 +525,6 @@ function fraseAleatoriaClima(){
         Math.floor(Math.random() * frasesClima.length)
     ];
 }
-async function carregarNoticias(){
-    const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
 
-    const url =
-        "https://api.rss2json.com/v1/api.json?rss_url=" +
-        encodeURIComponent(rss);
-
-    try{
-        const resposta = await fetch(url);
-        const dados = await resposta.json();
-
-        noticias = (dados.items || [])
-            .slice(0, 6)
-            .map(item => item.title);
-
-    }catch(e){
-        noticias = [];
-    }
-}
 
 iniciar();
