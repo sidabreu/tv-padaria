@@ -2,6 +2,7 @@ let slides = [];
 let atual = 0;
 let timerSlide = null;
 let noticias = [];
+let indiceNoticia = 0;
 
 let climaCache = {
     agora: "--°C",
@@ -283,23 +284,34 @@ function mostrarClima(){
 function mostrarNoticias(){
     layouts.noticias.classList.add("ativo");
 
-    const ul = document.getElementById("lista-noticias");
+    const noticia = noticias[indiceNoticia] || {
+        titulo:"Notícias do Sul de Minas",
+        descricao:"Aguarde a atualização das principais manchetes.",
+        imagem:"assets/fundos/fundo-noticia.png"
+    };
 
-    ul.innerHTML = "";
+    const titulo = document.getElementById("noticia-titulo");
+    const descricao = document.getElementById("noticia-descricao");
+    const layoutNoticias = document.getElementById("layout-noticias");
 
-    const lista = noticias.length
-        ? noticias.slice(0, 4)
-        : [
-            "Notícias do Sul de Minas aparecerão aqui.",
-            "A atualização depende da disponibilidade do RSS.",
-            "A Padaria Sant'Ana deseja um ótimo dia."
-        ];
+    if(titulo){
+        titulo.innerText = noticia.titulo;
+    }
 
-    lista.forEach(titulo => {
-        const li = document.createElement("li");
-        li.innerText = titulo;
-        ul.appendChild(li);
-    });
+    if(descricao){
+        descricao.innerText = noticia.descricao;
+    }
+
+    if(layoutNoticias){
+        layoutNoticias.style.background =
+            `linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.82)), url('${noticia.imagem}')`;
+
+        layoutNoticias.style.backgroundSize = "cover";
+        layoutNoticias.style.backgroundPosition = "center";
+    }
+
+    indiceNoticia =
+        (indiceNoticia + 1) % Math.max(noticias.length, 1);
 
     animarTexto(
         document.querySelector("#layout-noticias .texto-animado")
