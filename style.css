@@ -506,3 +506,23 @@ body {
 .clima-dupla{
     grid-template-columns:1fr 1fr;
 }
+.noticias-card{
+    background:rgba(20,13,9,.82);
+}
+
+#noticia-titulo{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:72px;
+    line-height:.95;
+    color:white;
+    margin-top:20px;
+    text-transform:uppercase;
+}
+
+#noticia-descricao{
+    font-size:30px;
+    color:#fff8e1;
+    font-weight:700;
+    line-height:1.25;
+    margin-top:22px;
+}
