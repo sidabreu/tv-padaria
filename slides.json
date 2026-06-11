@@ -17,8 +17,8 @@
     },
      {
       "tipo": "produto",
-      "titulo": "Pão Francês",
-      "descricao": "Sempre quentinho para você",
+      "titulo": "",
+      "descricao": "",
       "imagem": "assets/produtos/pao-frances.jpg",
       "tempo": 10
     },
