@@ -15,13 +15,7 @@
       "video": "assets/logos/Logo1.mp4",
       "tempo": 8
     },
-    {
-      "tipo": "mensagem",
-      "automatica": true,
-      "imagem": "assets/fundos/fundo-cafe.png",
-      "tempo": 9
-    },
-    {
+     {
       "tipo": "produto",
       "titulo": "Pão Francês",
       "descricao": "Sempre quentinho para você",
