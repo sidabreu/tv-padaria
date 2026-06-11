@@ -1,5 +1,12 @@
 {
   "slides": [
+     {
+  "tipo":"video",
+  "titulo":"",
+  "descricao":"",
+  "video":"assets/logos/Logo1.mp4",
+  "tempo":8
+},
     {
       "tipo": "abertura",
       "categoria": "REINAUGURAÇÃO",
