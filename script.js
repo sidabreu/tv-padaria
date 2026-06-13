@@ -489,6 +489,17 @@ function limparHtml(texto){
     div.innerHTML = texto;
     return div.innerText || "";
 }
+function limitarTexto(texto, limite){
+    if(!texto){
+        return "";
+    }
+
+    if(texto.length <= limite){
+        return texto;
+    }
+
+    return texto.substring(0, limite) + "...";
+}
 
 async function carregarNoticias(){
    const rss = "https://g1.globo.com/rss/g1/";
@@ -505,9 +516,10 @@ async function carregarNoticias(){
             .slice(0, 3)
             .map(item => ({
                 titulo: item.title || "Notícia do Sul de Minas",
-                descricao: limparHtml(
-                    item.description || "Veja os principais acontecimentos do Sul de Minas."
-                ),
+             descricao: limitarTexto(
+    limparHtml(item.description || "Veja os principais acontecimentos do Brasil."),
+    140
+),
                 imagem: item.thumbnail || "assets/fundos/fundo-noticia.png"
             }));
 
