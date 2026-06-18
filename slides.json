@@ -11,7 +11,7 @@
       "tipo": "produto",
       "titulo": "",
       "descricao": "",
-      "imagem": "assets/produtos/pao-frances.jpg",
+      "imagem": "assets/produtos/pao-frances.png",
       "tempo": 10
     },
     {
@@ -24,8 +24,8 @@
     },
      {
       "tipo": "produto",
-      "titulo": "",
-      "descricao": "",
+      "titulo": "Pão Francês Quentinho",
+      "descricao": "Saindo do forno várias vezes ao dia",
       "imagem": "assets/produtos/pao-frances.jpg",
       "tempo": 10
     },
