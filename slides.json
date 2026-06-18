@@ -8,6 +8,13 @@
   "tempo":8
 },
     {
+      "tipo": "produto",
+      "titulo": "",
+      "descricao": "",
+      "imagem": "assets/produtos/pao-frances.jpg",
+      "tempo": 10
+    },
+    {
       "tipo": "abertura",
       "categoria": "REINAUGURAÇÃO",
       "titulo": "Padaria Sant'Ana",
