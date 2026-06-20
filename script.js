@@ -172,10 +172,6 @@ function aplicarMidia(slide){
 }
 
 function aplicarClasseMidia(elemento, slide){
-    if(slide.tipo === "institucional"){
-        elemento.classList.add("midia-contain");
-    }
-
     const efeito = slide.efeito || efeitosMidia[atual % efeitosMidia.length];
     elemento.classList.add(efeito);
 }
