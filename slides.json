@@ -22,6 +22,13 @@
       "imagem": "assets/produtos/pao-frances.png",
       "tempo": 10
     },
+     {
+  "tipo":"video",
+  "titulo":"",
+  "descricao":"",
+  "video":"assets/Videos/Trufa.mp4",
+  "tempo":21
+},
     {
       "tipo": "abertura",
       "titulo": "Padaria Sant'Ana",
