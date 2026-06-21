@@ -4,17 +4,10 @@
   "tipo":"video",
   "titulo":"",
   "descricao":"",
-  "video":"assets/logos/Logo1.mp4",
+  "video":"assets/logos/Logo12.mp4",
   "tempo":8
 },
-     {
-      "tipo": "abertura",
-      "categoria": "REINAUGURAÇÃO",
-      "titulo": "Padaria Sant'Ana",
-      "descricao": "Uma nova fase começa agora",
-      "video": "assets/logos/Logo1.mp4",
-      "tempo": 8
-    },
+    
     {
   "tipo":"video",
   "titulo":"",
@@ -29,6 +22,14 @@
   "video":"assets/videos/Trufa.mp4",
   "tempo":21
 },
+     {
+      "tipo": "abertura",
+      "categoria": "REINAUGURAÇÃO",
+      "titulo": "Padaria Sant'Ana",
+      "descricao": "Uma nova fase começa agora",
+      "video": "assets/logos/Logo1.mp4",
+      "tempo": 8
+    },
     {
       "tipo": "produto",
       "titulo": "Pão Francês Quentinho",
