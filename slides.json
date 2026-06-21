@@ -22,6 +22,11 @@
   "video":"assets/videos/Trufa.mp4",
   "tempo":21
 },
+    {
+      "tipo": "clima",
+      "imagem": "assets/fundos/serra.jpeg",
+      "tempo": 13
+    },
      {
       "tipo": "abertura",
       "categoria": "REINAUGURAÇÃO",
@@ -128,7 +133,7 @@
     },
     {
       "tipo": "clima",
-      "imagem": "assets/findos/serra.jpeg",
+      "imagem": "assets/fundos/serra.jpeg",
       "tempo": 13
     },
     {
