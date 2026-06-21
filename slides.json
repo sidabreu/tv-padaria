@@ -16,6 +16,20 @@
       "tempo": 8
     },
     {
+  "tipo":"video",
+  "titulo":"",
+  "descricao":"",
+  "video":"assets/videos/cafemanha.mp4",
+  "tempo":20
+},
+      {
+  "tipo":"video",
+  "titulo":"",
+  "descricao":"",
+  "video":"assets/videos/Trufa.mp4",
+  "tempo":21
+},
+    {
       "tipo": "produto",
       "titulo": "Pão Francês Quentinho",
       "descricao": "Saindo do forno várias vezes ao dia",
