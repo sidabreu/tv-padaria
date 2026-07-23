@@ -497,7 +497,7 @@ function limitarTexto(texto, limite){
 }
 
 async function carregarNoticias(){
-   const rss = "https://g1.globo.com/rss/g1/";
+   const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
 
     const url =
         "https://api.rss2json.com/v1/api.json?rss_url=" +
