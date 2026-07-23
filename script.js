@@ -497,7 +497,7 @@ function limitarTexto(texto, limite){
 }
 
 async function carregarNoticias(){
-   const rss = "https://g1.globo.com/rss/g1/sul-de-minas/";
+   const rss = "https://news.google.com/rss/search?q=Minas+Gerais&hl=pt-BR&gl=BR&ceid=BR:pt-419";
 
     const url =
         "https://api.rss2json.com/v1/api.json?rss_url=" +
