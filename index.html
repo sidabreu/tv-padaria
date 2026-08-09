@@ -11,9 +11,40 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<style>
+#telaInicio {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+#btnIniciarPainel {
+  font-family: Montserrat, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  padding: 25px 60px;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+}
+</style>
 </head>
 
 <body>
+
+<!-- RÁDIO ONLINE INVISÍVEL -->
+<audio id="radioInternet" preload="none"></audio>
+
+<!-- TELA INICIAL -->
+<div id="telaInicio">
+  <button id="btnIniciarPainel">▶ INICIAR PAINEL</button>
+</div>
 
 <main id="player">
 
@@ -136,5 +167,40 @@
 
 <script src="script.js"></script>
 
+<script>
+const radioInternet = document.getElementById("radioInternet");
+const telaInicio = document.getElementById("telaInicio");
+const btnIniciarPainel = document.getElementById("btnIniciarPainel");
+
+radioInternet.src = "https://live.brasilhits.com/listen/brasilhits-sertanejo/acc";
+radioInternet.volume = 0.25;
+
+btnIniciarPainel.addEventListener("click", async function () {
+  try {
+    await radioInternet.play();
+    console.log("Rádio tocando.");
+  } catch (erro) {
+    console.error("Erro ao iniciar rádio:", erro);
+  }
+
+  telaInicio.style.display = "none";
+
+  try {
+    await document.documentElement.requestFullscreen();
+  } catch (erro) {
+    console.log("Tela cheia não disponível:", erro);
+  }
+});
+
+radioInternet.addEventListener("error", function () {
+  console.log("Rádio desconectada. Tentando reconectar...");
+  setTimeout(function () {
+    radioInternet.load();
+    radioInternet.play().catch(function () {});
+  }, 5000);
+});
+</script>
+
 </body>
 </html>
+
