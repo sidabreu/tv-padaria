@@ -510,7 +510,7 @@ async function carregarNoticias(){
         noticias = (dados.items || [])
             .slice(0, 3)
             .map(item => ({
-                titulo: item.title || "Notícia do Sul de Minas",
+                titulo: item.title || "Notícias",
              descricao: limitarTexto(
     limparHtml(item.description || "Veja os principais acontecimentos do Brasil."),
     140
@@ -520,7 +520,7 @@ async function carregarNoticias(){
 
         if(noticias.length === 0){
             noticias = [{
-                titulo: "Notícias do Sul de Minas",
+                titulo: "Notícias",
                 descricao: "Aguarde a atualização das principais manchetes.",
                 imagem: "assets/fundos/fundo-noticia.png"
             }];
@@ -532,7 +532,7 @@ async function carregarNoticias(){
         console.error("Erro ao carregar notícias:", e);
 
         noticias = [{
-            titulo: "Notícias do Sul de Minas",
+            titulo: "Notícias",
             descricao: "Aguarde a atualização das principais manchetes.",
             imagem: "assets/fundos/fundo-noticia.png"
         }];
