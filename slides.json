@@ -34,6 +34,7 @@
       "descricao": "Uma nova fase começa agora",
       "video": "assets/logos/Logo1.mp4",
       "tempo": 8
+      "ativo": false
     },
     {
       "tipo": "produto",
