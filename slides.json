@@ -5,7 +5,7 @@
   "titulo":"",
   "descricao":"",
   "video":"assets/logos/Logo12.mp4",
-  "tempo":8
+  "tempo":8,
    "ativo": true
 },
     
@@ -14,7 +14,7 @@
   "titulo":"",
   "descricao":"",
   "video":"assets/videos/cafemanha.mp4",
-  "tempo":20
+  "tempo":20,
   "ativo": true
 },
       {
