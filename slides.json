@@ -15,6 +15,7 @@
   "descricao":"",
   "video":"assets/videos/cafemanha.mp4",
   "tempo":20
+  "ativo": true
 },
       {
   "tipo":"video",
