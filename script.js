@@ -79,7 +79,9 @@ async function carregarSlides(){
     try{
         const resposta = await fetch("slides.json?cache=" + Date.now());
         const dados = await resposta.json();
-        return dados.slides || [];
+        // Carrega somente slides que não estejam desativados
+        return (dados.slides || []).filter(slide => slide.ativo !== false);
+        
     }catch(e){
         console.error("Erro ao carregar slides.json", e);
         return [];
