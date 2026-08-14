@@ -35,7 +35,7 @@
       "titulo": "Padaria Sant'Ana",
       "descricao": "Uma nova fase começa agora",
       "video": "assets/videos/0813(1).mp4",
-      "tempo": 8,
+      "tempo": 20,
       "ativo": true
     },
     {
@@ -57,7 +57,8 @@
       "titulo": "Padaria Sant'Ana",
       "descricao": "Uma nova fase começa agora",
       "video": "assets/logos/Logo1.mp4",
-      "tempo": 8
+      "tempo": 8,
+      "ativo": true
     },
      {
       "tipo": "produto",
