@@ -34,14 +34,14 @@
       "categoria": "REINAUGURAÇÃO",
       "titulo": "Padaria Sant'Ana",
       "descricao": "Uma nova fase começa agora",
-      "video": "assets/logos/Logo1.mp4",
+      "video": "assets/logos/0813(1).mp4",
       "tempo": 8,
-      "ativo": false
+      "ativo": true
     },
     {
       "tipo": "produto",
-      "titulo": "Pão Francês Quentinho",
-      "descricao": "Saindo do forno várias vezes ao dia",
+      "titulo": "Pão Francês",
+      "descricao": "O Pão Nosso de cada dia é aqui",
       "imagem": "assets/produtos/pao-frances.png",
       "tempo": 10
     },
@@ -63,7 +63,7 @@
       "tipo": "produto",
       "titulo": "Pão Francês Quentinho",
       "descricao": "Saindo do forno várias vezes ao dia",
-      "imagem": "assets/produtos/pao-frances.jpg",
+      "imagem": "assets/produtos/pao-sal.mp4",
       "tempo": 10
     },
     {
