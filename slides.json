@@ -58,35 +58,39 @@
       "descricao": "Uma nova fase começa agora",
       "video": "assets/logos/Logo1.mp4",
       "tempo": 8,
-      "ativo": true
+      "ativo": false
     },
      {
       "tipo": "produto",
       "titulo": "Pão Francês Quentinho",
       "descricao": "Saindo do forno várias vezes ao dia",
       "imagem": "assets/produtos/pao-sal.mp4",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Pão de Queijo",
       "descricao": "Receita tradicional mineira",
       "imagem": "assets/produtos/pao-queijo.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
   "tipo":"video",
   "titulo":"Pão Francês Quentinho",
   "descricao":"Saindo do forno várias vezes ao dia",
   "video":"assets/videos/pao-sal.mp4",
-  "tempo":12
+  "tempo":12,
+  "ativo": true
 },
     {
       "tipo": "video",
       "titulo": "Pão saindo do forno",
       "descricao": "Fresquinho todos os dias",
       "video": "assets/videos/forno.mp4",
-      "tempo": 12
+      "tempo": 12,
+      "ativo": false
     },
     {
       "tipo": "combo",
@@ -95,14 +99,16 @@
       "descricao": "Café + pão de queijo",
       "preco": "R$ 8,99",
       "imagem": "assets/combos/combo-cafe.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Broas e Roscas",
       "descricao": "Sabor de casa todos os dias",
       "imagem": "assets/produtos/broas-roscas.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "abertura",
@@ -110,21 +116,24 @@
       "titulo": "Sabor de Minas",
       "descricao": "Qualidade que acompanha sua família",
       "video": "assets/logos/Logo2.mp4",
-      "tempo": 8
+      "tempo": 8,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Salgados Assados",
       "descricao": "Fresquinhos e saborosos",
       "imagem": "assets/produtos/salgados-assados.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Coxinha",
       "descricao": "Clássica, cremosa e irresistível",
       "imagem": "assets/produtos/coxinha.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "combo",
@@ -133,7 +142,8 @@
       "descricao": "Praticidade e sabor para sua pausa",
       "preco": "R$ 12,99",
       "imagem": "assets/combos/combo-lanche.png",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "clima",
@@ -145,21 +155,24 @@
       "titulo": "Bolos Caseiros",
       "descricao": "Diversos sabores todos os dias",
       "imagem": "assets/produtos/bolos-caseiros.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Bolo de Cenoura",
       "descricao": "Com cobertura especial de chocolate",
       "imagem": "assets/produtos/bolo-cenoura.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "video",
       "titulo": "Café fresquinho",
       "descricao": "Uma pausa especial para o seu dia",
       "video": "assets/videos/cafe.mp4",
-      "tempo": 12
+      "tempo": 12,
+      "ativo": false
     },
     {
       "tipo": "noticias",
@@ -170,14 +183,16 @@
       "titulo": "Sonhos Recheados",
       "descricao": "Massa leve e recheio generoso",
       "imagem": "assets/produtos/sonhos.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Biscoitos Artesanais",
       "descricao": "Perfeitos para acompanhar o café",
       "imagem": "assets/produtos/biscoitos.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "institucional",
@@ -185,21 +200,24 @@
       "titulo": "Tradição e qualidade",
       "descricao": "Há mais de 20 anos fazendo parte da história da nossa comunidade.",
       "imagem": "assets/institucional/historia.jpg",
-      "tempo": 12
+      "tempo": 12,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Café Coado",
       "descricao": "Aquele aroma que combina com pão fresquinho",
       "imagem": "assets/produtos/cafe-coado.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Cappuccino",
       "descricao": "Cremoso e perfeito para sua pausa",
       "imagem": "assets/produtos/cappuccino.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "combo",
@@ -208,7 +226,8 @@
       "descricao": "Pães + frios + café",
       "preco": "Consulte",
       "imagem": "assets/combos/combo-familia.png",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "abertura",
@@ -216,7 +235,8 @@
       "titulo": "Mais conforto",
       "descricao": "Um novo espaço para receber você",
       "video": "assets/logos/Logo3.mp4",
-      "tempo": 8
+      "tempo": 8,
+      "ativo": false
     },
     {
       "tipo": "video",
@@ -230,14 +250,16 @@
       "titulo": "Encomendas de Bolos",
       "descricao": "Faça sua encomenda para festas e eventos",
       "imagem": "assets/produtos/encomendas-bolos.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "produto",
       "titulo": "Salgados para Festa",
       "descricao": "Consulte opções para encomenda",
       "imagem": "assets/produtos/salgados-festa.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "institucional",
@@ -245,7 +267,8 @@
       "titulo": "Atendimento com carinho",
       "descricao": "Mais sabor, conforto e qualidade para você.",
       "imagem": "assets/institucional/equipe.jpg",
-      "tempo": 12
+      "tempo": 12,
+      "ativo": false
     },
     {
       "tipo": "combo",
@@ -254,23 +277,24 @@
       "descricao": "Produtos selecionados no balcão",
       "preco": "Hoje",
       "imagem": "assets/combos/oferta-relampago.jpg",
-      "tempo": 10
+      "tempo": 10,
+      "ativo": false
     },
     {
       "tipo": "abertura",
       "categoria": "OBRIGADO",
       "titulo": "Volte sempre",
       "descricao": "Padaria Sant'Ana agradece sua visita",
-      "video": "assets/logos/Logo4.mp4",
-      "tempo": 8
+      "video": "assets/videos/vitrine2.mp4",
+      "tempo": 15
     },
     {
       "tipo": "abertura",
       "categoria": "PADARIA SANT'ANA",
       "titulo": "Tradição e sabor",
       "descricao": "Todos os dias para sua família",
-      "video": "assets/logos/Logo5.mp4",
-      "tempo": 8
+      "video": "assets/videos/vitrini1.mp4",
+      "tempo": 14
     }
   ]
 }
