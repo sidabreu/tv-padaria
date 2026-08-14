@@ -243,7 +243,8 @@
       "titulo": "Reinauguração",
       "descricao": "A Padaria Sant'Ana está de cara nova",
       "video": "assets/videos/reinauguracao.mp4",
-      "tempo": 15
+      "tempo": 15,
+      "ativo": false
     },
     {
       "tipo": "produto",
@@ -286,7 +287,8 @@
       "titulo": "Volte sempre",
       "descricao": "Padaria Sant'Ana agradece sua visita",
       "video": "assets/videos/vitrine2.mp4",
-      "tempo": 15
+      "tempo": 15,
+      "ativo": false
     },
     {
       "tipo": "abertura",
