@@ -352,15 +352,24 @@ function limparAnimacoesTexto(el){
 }
 
 function atualizarRelogios(){
+
     const h = new Date().toLocaleTimeString("pt-BR", {
         hour:"2-digit",
         minute:"2-digit"
     });
 
+    // RELÓGIO DAS NOTÍCIAS
     const horaNoticias = document.getElementById("hora-noticias");
 
     if(horaNoticias){
         horaNoticias.innerText = "🕒 " + h;
+    }
+
+    // RELÓGIO DO CLIMA
+    const horaClima = document.getElementById("hora-clima");
+
+    if(horaClima){
+        horaClima.innerText = "🕒 " + h;
     }
 }
 
